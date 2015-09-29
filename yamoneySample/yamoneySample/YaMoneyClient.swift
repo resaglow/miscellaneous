@@ -19,9 +19,9 @@ class YaMoneyClient {
     func getCategoriesWithCompletion(completionHandler: (jsonData: NSData?, error: NSError?) -> Void) {
         let request = NSURLRequest(URL: url)
         
-        var session = NSURLSession.sharedSession()
+        var session: NSURLSession? = NSURLSession.sharedSession()
         
-        (session.dataTaskWithRequest(request, completionHandler: { (data, response, downloadError) -> Void in
+        (session!.dataTaskWithRequest(request, completionHandler: { (data, response, downloadError) -> Void in
             if let downloadErr = downloadError {
                 println("Networking error, \(downloadErr.description)");
                 completionHandler(jsonData: nil, error: downloadError)
@@ -33,6 +33,8 @@ class YaMoneyClient {
                     } else {
                         completionHandler(jsonData: data, error: nil)
                     }
+                    // Needed?
+                    session = nil;
                 }
             }
         })).resume()

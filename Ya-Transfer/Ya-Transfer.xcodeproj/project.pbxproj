@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9C36A4881BB80CED00BE8948 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4871BB80CED00BE8948 /* main.m */; };
+		9C36A48B1BB80CED00BE8948 /* YTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A48A1BB80CED00BE8948 /* YTAppDelegate.m */; };
+		9C36A4911BB80CED00BE8948 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C36A48F1BB80CED00BE8948 /* Main.storyboard */; };
+		9C36A4931BB80CED00BE8948 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C36A4921BB80CED00BE8948 /* Images.xcassets */; };
+		9C36A4961BB80CED00BE8948 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C36A4941BB80CED00BE8948 /* LaunchScreen.xib */; };
+		9C36A4A21BB80CED00BE8948 /* Ya_TransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4A11BB80CED00BE8948 /* Ya_TransferTests.m */; };
+		9C36A4B01BB878BA00BE8948 /* YTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4AF1BB878BA00BE8948 /* YTLoginViewController.m */; };
+		9C36A4B41BB8800700BE8948 /* YTNetworkingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */; };
+		9C36A4B71BB8E41B00BE8948 /* YTAuthRequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */; };
+		9C36A4BA1BB94AFA00BE8948 /* YTAuthSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */; };
+		9C5F25B21BB9624300130979 /* YTResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B11BB9624300130979 /* YTResponseManager.m */; };
+		9C5F25B51BB9666C00130979 /* YTTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B41BB9666C00130979 /* YTTransferViewController.m */; };
+		9C5F25BA1BB9A9A000130979 /* YTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B91BB9A9A000130979 /* YTTextField.m */; };
+		9C5F25BD1BB9F0BF00130979 /* YTTextFieldCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25BC1BB9F0BF00130979 /* YTTextFieldCurrency.m */; };
+		9C5F25C01BBA054000130979 /* YTUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25BF1BBA054000130979 /* YTUserInfo.m */; };
+		9C5F25C91BBA0E7300130979 /* YTLabelHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25C81BBA0E7300130979 /* YTLabelHeader.m */; };
+		9C5F25CE1BBA144D00130979 /* YTLabelInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25CD1BBA144D00130979 /* YTLabelInfo.m */; };
+		9C5F25D21BBA245800130979 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25D11BBA245800130979 /* KeychainWrapper.m */; };
+		9C5F25D51BBA340900130979 /* YTViewProtectionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */; };
+		9C5F25DC1BBAC6B500130979 /* YTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25DB1BBAC6B500130979 /* YTTextView.m */; };
+		9C5F25DF1BBADD1A00130979 /* YTPaymentRequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */; };
+		9C5F25E21BBAE9F300130979 /* YTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25E11BBAE9F300130979 /* YTScrollView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9C36A49C1BB80CED00BE8948 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9C36A47A1BB80CED00BE8948 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9C36A4811BB80CED00BE8948;
+			remoteInfo = "Ya-Transfer";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9C36A4821BB80CED00BE8948 /* Ya-Transfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ya-Transfer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C36A4861BB80CED00BE8948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C36A4871BB80CED00BE8948 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9C36A4891BB80CED00BE8948 /* YTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YTAppDelegate.h; sourceTree = "<group>"; };
+		9C36A48A1BB80CED00BE8948 /* YTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTAppDelegate.m; sourceTree = "<group>"; };
+		9C36A4901BB80CED00BE8948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9C36A4921BB80CED00BE8948 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9C36A4951BB80CED00BE8948 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9C36A49B1BB80CED00BE8948 /* Ya-TransferTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ya-TransferTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C36A4A01BB80CED00BE8948 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9C36A4A11BB80CED00BE8948 /* Ya_TransferTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Ya_TransferTests.m; sourceTree = "<group>"; };
+		9C36A4AE1BB878BA00BE8948 /* YTLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLoginViewController.h; sourceTree = "<group>"; };
+		9C36A4AF1BB878BA00BE8948 /* YTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoginViewController.m; sourceTree = "<group>"; };
+		9C36A4B21BB8800700BE8948 /* YTNetworkingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkingHelper.h; sourceTree = "<group>"; };
+		9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkingHelper.m; sourceTree = "<group>"; };
+		9C36A4B51BB8E41B00BE8948 /* YTAuthRequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthRequestsManager.h; sourceTree = "<group>"; };
+		9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthRequestsManager.m; sourceTree = "<group>"; };
+		9C36A4B81BB94AFA00BE8948 /* YTAuthSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthSession.h; sourceTree = "<group>"; };
+		9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthSession.m; sourceTree = "<group>"; };
+		9C5F25B01BB9624300130979 /* YTResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTResponseManager.h; sourceTree = "<group>"; };
+		9C5F25B11BB9624300130979 /* YTResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTResponseManager.m; sourceTree = "<group>"; };
+		9C5F25B31BB9666C00130979 /* YTTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTransferViewController.h; sourceTree = "<group>"; };
+		9C5F25B41BB9666C00130979 /* YTTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTransferViewController.m; sourceTree = "<group>"; };
+		9C5F25B81BB9A9A000130979 /* YTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTextField.h; sourceTree = "<group>"; };
+		9C5F25B91BB9A9A000130979 /* YTTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTextField.m; sourceTree = "<group>"; };
+		9C5F25BB1BB9F0BF00130979 /* YTTextFieldCurrency.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTextFieldCurrency.h; sourceTree = "<group>"; };
+		9C5F25BC1BB9F0BF00130979 /* YTTextFieldCurrency.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTextFieldCurrency.m; sourceTree = "<group>"; };
+		9C5F25BE1BBA054000130979 /* YTUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTUserInfo.h; sourceTree = "<group>"; };
+		9C5F25BF1BBA054000130979 /* YTUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTUserInfo.m; sourceTree = "<group>"; };
+		9C5F25C71BBA0E7300130979 /* YTLabelHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLabelHeader.h; sourceTree = "<group>"; };
+		9C5F25C81BBA0E7300130979 /* YTLabelHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLabelHeader.m; sourceTree = "<group>"; };
+		9C5F25CC1BBA144D00130979 /* YTLabelInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTLabelInfo.h; sourceTree = "<group>"; };
+		9C5F25CD1BBA144D00130979 /* YTLabelInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLabelInfo.m; sourceTree = "<group>"; };
+		9C5F25D01BBA245800130979 /* KeychainWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainWrapper.h; sourceTree = "<group>"; };
+		9C5F25D11BBA245800130979 /* KeychainWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainWrapper.m; sourceTree = "<group>"; };
+		9C5F25D31BBA340900130979 /* YTViewProtectionCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTViewProtectionCode.h; sourceTree = "<group>"; };
+		9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTViewProtectionCode.m; sourceTree = "<group>"; };
+		9C5F25DA1BBAC6B500130979 /* YTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTextView.h; sourceTree = "<group>"; };
+		9C5F25DB1BBAC6B500130979 /* YTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTextView.m; sourceTree = "<group>"; };
+		9C5F25DD1BBADD1A00130979 /* YTPaymentRequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPaymentRequestsManager.h; sourceTree = "<group>"; };
+		9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPaymentRequestsManager.m; sourceTree = "<group>"; };
+		9C5F25E01BBAE9F300130979 /* YTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTScrollView.h; sourceTree = "<group>"; };
+		9C5F25E11BBAE9F300130979 /* YTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTScrollView.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9C36A47F1BB80CED00BE8948 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C36A4981BB80CED00BE8948 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9C36A4791BB80CED00BE8948 = {
+			isa = PBXGroup;
+			children = (
+				9C36A4841BB80CED00BE8948 /* Ya-Transfer */,
+				9C36A49E1BB80CED00BE8948 /* Ya-TransferTests */,
+				9C36A4831BB80CED00BE8948 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9C36A4831BB80CED00BE8948 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4821BB80CED00BE8948 /* Ya-Transfer.app */,
+				9C36A49B1BB80CED00BE8948 /* Ya-TransferTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C36A4841BB80CED00BE8948 /* Ya-Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25D71BBA342E00130979 /* Model */,
+				9C5F25CF1BBA234F00130979 /* Persistence */,
+				9C36A4B11BB87FC800BE8948 /* Networking */,
+				9C5F25CB1BBA13BD00130979 /* Login */,
+				9C5F25C11BBA054800130979 /* Transfer */,
+				9C5F25D81BBA347000130979 /* Success */,
+				9C5F25D61BBA341900130979 /* History */,
+				9C36A4891BB80CED00BE8948 /* YTAppDelegate.h */,
+				9C36A48A1BB80CED00BE8948 /* YTAppDelegate.m */,
+				9C36A48F1BB80CED00BE8948 /* Main.storyboard */,
+				9C36A4921BB80CED00BE8948 /* Images.xcassets */,
+				9C36A4941BB80CED00BE8948 /* LaunchScreen.xib */,
+				9C36A4851BB80CED00BE8948 /* Supporting Files */,
+			);
+			path = "Ya-Transfer";
+			sourceTree = "<group>";
+		};
+		9C36A4851BB80CED00BE8948 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4861BB80CED00BE8948 /* Info.plist */,
+				9C36A4871BB80CED00BE8948 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C36A49E1BB80CED00BE8948 /* Ya-TransferTests */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4A11BB80CED00BE8948 /* Ya_TransferTests.m */,
+				9C36A49F1BB80CED00BE8948 /* Supporting Files */,
+			);
+			path = "Ya-TransferTests";
+			sourceTree = "<group>";
+		};
+		9C36A49F1BB80CED00BE8948 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4A01BB80CED00BE8948 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C36A4B11BB87FC800BE8948 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25D91BBA3B0B00130979 /* Payment */,
+				9C5F25C51BBA06F800130979 /* Authorization */,
+				9C36A4B21BB8800700BE8948 /* YTNetworkingHelper.h */,
+				9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */,
+				9C5F25B01BB9624300130979 /* YTResponseManager.h */,
+				9C5F25B11BB9624300130979 /* YTResponseManager.m */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		9C5F25C11BBA054800130979 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25B31BB9666C00130979 /* YTTransferViewController.h */,
+				9C5F25B41BB9666C00130979 /* YTTransferViewController.m */,
+				9C5F25CA1BBA139300130979 /* View */,
+			);
+			name = Transfer;
+			sourceTree = "<group>";
+		};
+		9C5F25C51BBA06F800130979 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4B51BB8E41B00BE8948 /* YTAuthRequestsManager.h */,
+				9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */,
+				9C36A4B81BB94AFA00BE8948 /* YTAuthSession.h */,
+				9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
+		9C5F25CA1BBA139300130979 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25B81BB9A9A000130979 /* YTTextField.h */,
+				9C5F25B91BB9A9A000130979 /* YTTextField.m */,
+				9C5F25BB1BB9F0BF00130979 /* YTTextFieldCurrency.h */,
+				9C5F25BC1BB9F0BF00130979 /* YTTextFieldCurrency.m */,
+				9C5F25DA1BBAC6B500130979 /* YTTextView.h */,
+				9C5F25DB1BBAC6B500130979 /* YTTextView.m */,
+				9C5F25C71BBA0E7300130979 /* YTLabelHeader.h */,
+				9C5F25C81BBA0E7300130979 /* YTLabelHeader.m */,
+				9C5F25CC1BBA144D00130979 /* YTLabelInfo.h */,
+				9C5F25CD1BBA144D00130979 /* YTLabelInfo.m */,
+				9C5F25D31BBA340900130979 /* YTViewProtectionCode.h */,
+				9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */,
+				9C5F25E01BBAE9F300130979 /* YTScrollView.h */,
+				9C5F25E11BBAE9F300130979 /* YTScrollView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9C5F25CB1BBA13BD00130979 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9C36A4AE1BB878BA00BE8948 /* YTLoginViewController.h */,
+				9C36A4AF1BB878BA00BE8948 /* YTLoginViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		9C5F25CF1BBA234F00130979 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25D01BBA245800130979 /* KeychainWrapper.h */,
+				9C5F25D11BBA245800130979 /* KeychainWrapper.m */,
+			);
+			name = Persistence;
+			sourceTree = "<group>";
+		};
+		9C5F25D61BBA341900130979 /* History */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
+		9C5F25D71BBA342E00130979 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25BE1BBA054000130979 /* YTUserInfo.h */,
+				9C5F25BF1BBA054000130979 /* YTUserInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9C5F25D81BBA347000130979 /* Success */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Success;
+			sourceTree = "<group>";
+		};
+		9C5F25D91BBA3B0B00130979 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25DD1BBADD1A00130979 /* YTPaymentRequestsManager.h */,
+				9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9C36A4811BB80CED00BE8948 /* Ya-Transfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C36A4A51BB80CED00BE8948 /* Build configuration list for PBXNativeTarget "Ya-Transfer" */;
+			buildPhases = (
+				9C36A47E1BB80CED00BE8948 /* Sources */,
+				9C36A47F1BB80CED00BE8948 /* Frameworks */,
+				9C36A4801BB80CED00BE8948 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ya-Transfer";
+			productName = "Ya-Transfer";
+			productReference = 9C36A4821BB80CED00BE8948 /* Ya-Transfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9C36A49A1BB80CED00BE8948 /* Ya-TransferTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9C36A4A81BB80CED00BE8948 /* Build configuration list for PBXNativeTarget "Ya-TransferTests" */;
+			buildPhases = (
+				9C36A4971BB80CED00BE8948 /* Sources */,
+				9C36A4981BB80CED00BE8948 /* Frameworks */,
+				9C36A4991BB80CED00BE8948 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9C36A49D1BB80CED00BE8948 /* PBXTargetDependency */,
+			);
+			name = "Ya-TransferTests";
+			productName = "Ya-TransferTests";
+			productReference = 9C36A49B1BB80CED00BE8948 /* Ya-TransferTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9C36A47A1BB80CED00BE8948 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Artem Lobanov";
+				TargetAttributes = {
+					9C36A4811BB80CED00BE8948 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					9C36A49A1BB80CED00BE8948 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 9C36A4811BB80CED00BE8948;
+					};
+				};
+			};
+			buildConfigurationList = 9C36A47D1BB80CED00BE8948 /* Build configuration list for PBXProject "Ya-Transfer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9C36A4791BB80CED00BE8948;
+			productRefGroup = 9C36A4831BB80CED00BE8948 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9C36A4811BB80CED00BE8948 /* Ya-Transfer */,
+				9C36A49A1BB80CED00BE8948 /* Ya-TransferTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9C36A4801BB80CED00BE8948 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C36A4911BB80CED00BE8948 /* Main.storyboard in Resources */,
+				9C36A4961BB80CED00BE8948 /* LaunchScreen.xib in Resources */,
+				9C36A4931BB80CED00BE8948 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C36A4991BB80CED00BE8948 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9C36A47E1BB80CED00BE8948 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C36A4B41BB8800700BE8948 /* YTNetworkingHelper.m in Sources */,
+				9C5F25D51BBA340900130979 /* YTViewProtectionCode.m in Sources */,
+				9C36A4B71BB8E41B00BE8948 /* YTAuthRequestsManager.m in Sources */,
+				9C5F25BA1BB9A9A000130979 /* YTTextField.m in Sources */,
+				9C5F25DC1BBAC6B500130979 /* YTTextView.m in Sources */,
+				9C5F25B21BB9624300130979 /* YTResponseManager.m in Sources */,
+				9C5F25CE1BBA144D00130979 /* YTLabelInfo.m in Sources */,
+				9C36A48B1BB80CED00BE8948 /* YTAppDelegate.m in Sources */,
+				9C5F25BD1BB9F0BF00130979 /* YTTextFieldCurrency.m in Sources */,
+				9C36A4BA1BB94AFA00BE8948 /* YTAuthSession.m in Sources */,
+				9C5F25DF1BBADD1A00130979 /* YTPaymentRequestsManager.m in Sources */,
+				9C5F25C01BBA054000130979 /* YTUserInfo.m in Sources */,
+				9C5F25C91BBA0E7300130979 /* YTLabelHeader.m in Sources */,
+				9C36A4881BB80CED00BE8948 /* main.m in Sources */,
+				9C5F25E21BBAE9F300130979 /* YTScrollView.m in Sources */,
+				9C5F25D21BBA245800130979 /* KeychainWrapper.m in Sources */,
+				9C5F25B51BB9666C00130979 /* YTTransferViewController.m in Sources */,
+				9C36A4B01BB878BA00BE8948 /* YTLoginViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C36A4971BB80CED00BE8948 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C36A4A21BB80CED00BE8948 /* Ya_TransferTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9C36A49D1BB80CED00BE8948 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9C36A4811BB80CED00BE8948 /* Ya-Transfer */;
+			targetProxy = 9C36A49C1BB80CED00BE8948 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9C36A48F1BB80CED00BE8948 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C36A4901BB80CED00BE8948 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9C36A4941BB80CED00BE8948 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9C36A4951BB80CED00BE8948 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9C36A4A31BB80CED00BE8948 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C36A4A41BB80CED00BE8948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9C36A4A61BB80CED00BE8948 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Ya-Transfer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9C36A4A71BB80CED00BE8948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Ya-Transfer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9C36A4A91BB80CED00BE8948 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ya-TransferTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya-Transfer.app/Ya-Transfer";
+			};
+			name = Debug;
+		};
+		9C36A4AA1BB80CED00BE8948 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Ya-TransferTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Ya-Transfer.app/Ya-Transfer";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9C36A47D1BB80CED00BE8948 /* Build configuration list for PBXProject "Ya-Transfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C36A4A31BB80CED00BE8948 /* Debug */,
+				9C36A4A41BB80CED00BE8948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C36A4A51BB80CED00BE8948 /* Build configuration list for PBXNativeTarget "Ya-Transfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C36A4A61BB80CED00BE8948 /* Debug */,
+				9C36A4A71BB80CED00BE8948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9C36A4A81BB80CED00BE8948 /* Build configuration list for PBXNativeTarget "Ya-TransferTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9C36A4A91BB80CED00BE8948 /* Debug */,
+				9C36A4AA1BB80CED00BE8948 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9C36A47A1BB80CED00BE8948 /* Project object */;
+}

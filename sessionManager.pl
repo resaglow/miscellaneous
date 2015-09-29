@@ -54,6 +54,9 @@ $commands = AnyEvent->io(
                 print "Cannot open file: $input; continuing to write to $curOutputFilename\n";
                 if (!($curOutputFh = IO::File->new($curOutputFilename, 'w'))) {
                     print "Cannot continue writing to while file: $curOutputFilename; terminating\n";
+                    undef $commands;
+                    undef $process;
+                    $done->send;       
                 }
             }
         } else {

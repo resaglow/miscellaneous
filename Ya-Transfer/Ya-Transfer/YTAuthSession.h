@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YTAuthRequestsManager.h"
-#import "YTResponseManager.h"
+#import "YTAuthRequestManager.h"
+#import "YTAuthResponseManager.h"
+#import "YTSession.h"
 
-@interface YTAuthSession : NSObject
+@interface YTAuthSession : YTSession
 
-@property (nonatomic) YTAuthRequestsManager *requestsManager;
-@property (nonatomic) YTResponseManager *responseManager;
+@property (nonatomic) YTAuthRequestManager *requestsManager;
+@property (nonatomic) YTAuthResponseManager *responseManager;
 
 // This sends token request when correct redirect URL is passed
 - (BOOL)handleUrlLoad:(NSURL *)url;

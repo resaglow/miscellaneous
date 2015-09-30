@@ -9,7 +9,7 @@
 #import "YTLoginViewController.h"
 #import "YTTransferViewController.h"
 
-@interface YTLoginViewController () <UIWebViewDelegate, YTResponseManagerDelegate>
+@interface YTLoginViewController () <UIWebViewDelegate, YTAuthResponseManagerDelegate>
 
 @property (nonatomic) YTAuthSession *authSession;
 
@@ -34,7 +34,7 @@
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
-navigationType:(UIWebViewNavigationType)navigationType
+ navigationType:(UIWebViewNavigationType)navigationType
 {
     return [self.authSession handleUrlLoad:request.URL];
 }

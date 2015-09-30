@@ -8,6 +8,9 @@
 
 #import "YTScrollView.h"
 
+// TODO Move control methods out to container view controller class
+// TODO: Clear out constants
+
 @interface YTScrollView ()
 
 @property (nonatomic) UIViewController *vc;
@@ -18,7 +21,7 @@
 
 - (instancetype)initWithController:(UIViewController *)viewController
 {
-    self = [super init];
+    self = [self init];
     
     if (self) {
         self.vc = viewController;
@@ -27,6 +30,8 @@
     
     return self;
 }
+
+#pragma mark - UI methods
 
 - (void)setupLayout
 {

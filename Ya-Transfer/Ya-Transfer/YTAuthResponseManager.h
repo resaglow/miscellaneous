@@ -1,5 +1,5 @@
 //
-//  YTResponseManager.h
+//  YTAuthResponseManager.h
 //  Ya-Transfer
 //
 //  Created by Artem Lobanov on 28/09/15.
@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol YTResponseManagerDelegate <NSObject>
+@protocol YTAuthResponseManagerDelegate
 
 - (void)responseManagerDidHandleToken;
 
 @end
 
-@interface YTResponseManager : NSObject
+@interface YTAuthResponseManager : NSObject
 
-@property (nonatomic, weak) id<YTResponseManagerDelegate> delegate;
+@property (nonatomic, weak) id<YTAuthResponseManagerDelegate> delegate;
 
 - (void)handleTokenResponse:(NSData *)data;
 

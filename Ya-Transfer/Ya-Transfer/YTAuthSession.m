@@ -9,17 +9,6 @@
 #import "YTAuthSession.h"
 #import "YTNetworkingHelper.h"
 
-// App specific method name for debug
-#ifdef DEBUG
-#define kGetTokenMethodName @"GetToken"
-#endif
-
-@interface YTAuthSession ()
-
-@property (nonatomic) NSURLSession *authUrlSession;
-
-@end
-
 @implementation YTAuthSession
 
 - (instancetype)init
@@ -27,38 +16,11 @@
     self = [super init];
     
     if (self) {
-        self.requestsManager = [[YTAuthRequestsManager alloc] init];
-        self.responseManager = [[YTResponseManager alloc] init];
-        self.authUrlSession  = [NSURLSession sessionWithConfiguration:
-                                [NSURLSessionConfiguration defaultSessionConfiguration]];
+        self.requestsManager = [[YTAuthRequestManager alloc] init];
+        self.responseManager = [[YTAuthResponseManager alloc] init];
     }
     
     return self;
-}
-
-#pragma mark - Get token task
-
-- (void)executeGetTokenTaskWithRequest:(NSURLRequest *)tokenRequest completion:(void (^)(NSData *))handler
-{
-    [[self.authUrlSession dataTaskWithRequest:tokenRequest
-                           completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-                               NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-                               if (error) {
-#ifdef DEBUG
-                                   NSLog(@"%@ networking error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
-#endif
-                                   handler(nil);
-                               } else {
-                                   if (httpResponse.statusCode != 200) {
-#ifdef DEBUG
-                                       NSLog(@"%@ request error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
-#endif
-                                       handler(nil);
-                                   } else {
-                                       handler(data);
-                                   }
-                               }
-                           }] resume];
 }
 
 #pragma mark - Token request helpers
@@ -93,7 +55,7 @@
         return YES;
     } else {
         NSURLRequest *tokenRequest = [self.requestsManager tokenRequestWithCode:code];
-        [self executeGetTokenTaskWithRequest:tokenRequest completion:^(NSData *data) {
+        [self executeTaskWithRequest:tokenRequest completion:^(NSData *data) {
             [self.responseManager handleTokenResponse:data];
         }];
         

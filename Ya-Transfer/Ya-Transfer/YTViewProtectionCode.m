@@ -9,7 +9,7 @@
 #import "YTViewProtectionCode.h"
 #import "YTTextField.h"
 
-static NSString * const prompt = @"Validity period (days):";
+static NSString * const kPrompt = @"Validity period (days):";
 
 // MVC violation yet it seems redundant for this case to create an intermediate controller
 @interface YTViewProtectionCode () <UITextFieldDelegate>
@@ -29,7 +29,7 @@ static NSString * const prompt = @"Validity period (days):";
     if (self) {
         self.promptLabel = [[UILabel alloc] init];
         self.promptLabel.translatesAutoresizingMaskIntoConstraints = NO;
-        self.promptLabel.text = prompt;
+        self.promptLabel.text = kPrompt;
         self.promptLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize] - 1];
         [self addSubview:self.promptLabel];
         

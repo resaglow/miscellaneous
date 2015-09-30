@@ -91,10 +91,10 @@
             </objects>
             <point key="canvasLocation" x="1184" y="368"/>
         </scene>
-        <!--View Controller-->
+        <!--Transfer Success View Controller-->
         <scene sceneID="bPK-UH-vry">
             <objects>
-                <viewController storyboardIdentifier="TransferSuccessViewController" id="KRq-Gt-oNn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TransferSuccessViewController" id="KRq-Gt-oNn" customClass="YTTransferSuccessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c8M-nr-2WT"/>
                         <viewControllerLayoutGuide type="bottom" id="FbX-W6-Tda"/>
@@ -102,14 +102,6 @@
                     <view key="view" contentMode="scaleToFill" id="jCS-Sm-8MB">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfC-S3-3AT">
-                                <rect key="frame" x="16" y="100" width="59" height="30"/>
-                                <state key="normal" title="Success">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

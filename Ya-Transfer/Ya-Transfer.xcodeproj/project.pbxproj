@@ -15,9 +15,9 @@
 		9C36A4A21BB80CED00BE8948 /* Ya_TransferTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4A11BB80CED00BE8948 /* Ya_TransferTests.m */; };
 		9C36A4B01BB878BA00BE8948 /* YTLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4AF1BB878BA00BE8948 /* YTLoginViewController.m */; };
 		9C36A4B41BB8800700BE8948 /* YTNetworkingHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */; };
-		9C36A4B71BB8E41B00BE8948 /* YTAuthRequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */; };
+		9C36A4B71BB8E41B00BE8948 /* YTAuthRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B61BB8E41B00BE8948 /* YTAuthRequestManager.m */; };
 		9C36A4BA1BB94AFA00BE8948 /* YTAuthSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */; };
-		9C5F25B21BB9624300130979 /* YTResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B11BB9624300130979 /* YTResponseManager.m */; };
+		9C5F25B21BB9624300130979 /* YTAuthResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B11BB9624300130979 /* YTAuthResponseManager.m */; };
 		9C5F25B51BB9666C00130979 /* YTTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B41BB9666C00130979 /* YTTransferViewController.m */; };
 		9C5F25BA1BB9A9A000130979 /* YTTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25B91BB9A9A000130979 /* YTTextField.m */; };
 		9C5F25BD1BB9F0BF00130979 /* YTTextFieldCurrency.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25BC1BB9F0BF00130979 /* YTTextFieldCurrency.m */; };
@@ -27,8 +27,14 @@
 		9C5F25D21BBA245800130979 /* KeychainWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25D11BBA245800130979 /* KeychainWrapper.m */; };
 		9C5F25D51BBA340900130979 /* YTViewProtectionCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */; };
 		9C5F25DC1BBAC6B500130979 /* YTTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25DB1BBAC6B500130979 /* YTTextView.m */; };
-		9C5F25DF1BBADD1A00130979 /* YTPaymentRequestsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */; };
+		9C5F25DF1BBADD1A00130979 /* YTPaymentRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25DE1BBADD1A00130979 /* YTPaymentRequestManager.m */; };
 		9C5F25E21BBAE9F300130979 /* YTScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25E11BBAE9F300130979 /* YTScrollView.m */; };
+		9C5F25E71BBAF9AA00130979 /* YTTransferSuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25E61BBAF9AA00130979 /* YTTransferSuccessViewController.m */; };
+		9C5F25EA1BBAFE7300130979 /* HistoryDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5F25E91BBAFE7300130979 /* HistoryDataManager.m */; };
+		9C9932CE1BBB14A50005C2B0 /* YTScrollViewWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9932CD1BBB14A50005C2B0 /* YTScrollViewWrapper.m */; };
+		9C9932D21BBB1ADD0005C2B0 /* YTPaymentSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9932D11BBB1ADD0005C2B0 /* YTPaymentSession.m */; };
+		9C9932D51BBB1AE90005C2B0 /* YTPaymentResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9932D41BBB1AE90005C2B0 /* YTPaymentResponseManager.m */; };
+		9C9932DB1BBB6F040005C2B0 /* YTSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C9932DA1BBB6F040005C2B0 /* YTSession.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +63,12 @@
 		9C36A4AF1BB878BA00BE8948 /* YTLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTLoginViewController.m; sourceTree = "<group>"; };
 		9C36A4B21BB8800700BE8948 /* YTNetworkingHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTNetworkingHelper.h; sourceTree = "<group>"; };
 		9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTNetworkingHelper.m; sourceTree = "<group>"; };
-		9C36A4B51BB8E41B00BE8948 /* YTAuthRequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthRequestsManager.h; sourceTree = "<group>"; };
-		9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthRequestsManager.m; sourceTree = "<group>"; };
+		9C36A4B51BB8E41B00BE8948 /* YTAuthRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthRequestManager.h; sourceTree = "<group>"; };
+		9C36A4B61BB8E41B00BE8948 /* YTAuthRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthRequestManager.m; sourceTree = "<group>"; };
 		9C36A4B81BB94AFA00BE8948 /* YTAuthSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthSession.h; sourceTree = "<group>"; };
 		9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthSession.m; sourceTree = "<group>"; };
-		9C5F25B01BB9624300130979 /* YTResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTResponseManager.h; sourceTree = "<group>"; };
-		9C5F25B11BB9624300130979 /* YTResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTResponseManager.m; sourceTree = "<group>"; };
+		9C5F25B01BB9624300130979 /* YTAuthResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTAuthResponseManager.h; sourceTree = "<group>"; };
+		9C5F25B11BB9624300130979 /* YTAuthResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTAuthResponseManager.m; sourceTree = "<group>"; };
 		9C5F25B31BB9666C00130979 /* YTTransferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTransferViewController.h; sourceTree = "<group>"; };
 		9C5F25B41BB9666C00130979 /* YTTransferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTransferViewController.m; sourceTree = "<group>"; };
 		9C5F25B81BB9A9A000130979 /* YTTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTextField.h; sourceTree = "<group>"; };
@@ -81,10 +87,22 @@
 		9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTViewProtectionCode.m; sourceTree = "<group>"; };
 		9C5F25DA1BBAC6B500130979 /* YTTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTextView.h; sourceTree = "<group>"; };
 		9C5F25DB1BBAC6B500130979 /* YTTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTextView.m; sourceTree = "<group>"; };
-		9C5F25DD1BBADD1A00130979 /* YTPaymentRequestsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPaymentRequestsManager.h; sourceTree = "<group>"; };
-		9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPaymentRequestsManager.m; sourceTree = "<group>"; };
+		9C5F25DD1BBADD1A00130979 /* YTPaymentRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPaymentRequestManager.h; sourceTree = "<group>"; };
+		9C5F25DE1BBADD1A00130979 /* YTPaymentRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPaymentRequestManager.m; sourceTree = "<group>"; };
 		9C5F25E01BBAE9F300130979 /* YTScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTScrollView.h; sourceTree = "<group>"; };
 		9C5F25E11BBAE9F300130979 /* YTScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTScrollView.m; sourceTree = "<group>"; };
+		9C5F25E51BBAF9AA00130979 /* YTTransferSuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTransferSuccessViewController.h; sourceTree = "<group>"; };
+		9C5F25E61BBAF9AA00130979 /* YTTransferSuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTransferSuccessViewController.m; sourceTree = "<group>"; };
+		9C5F25E81BBAFE7300130979 /* HistoryDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDataManager.h; sourceTree = "<group>"; };
+		9C5F25E91BBAFE7300130979 /* HistoryDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDataManager.m; sourceTree = "<group>"; };
+		9C9932CC1BBB14A50005C2B0 /* YTScrollViewWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTScrollViewWrapper.h; sourceTree = "<group>"; };
+		9C9932CD1BBB14A50005C2B0 /* YTScrollViewWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTScrollViewWrapper.m; sourceTree = "<group>"; };
+		9C9932D01BBB1ADD0005C2B0 /* YTPaymentSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPaymentSession.h; sourceTree = "<group>"; };
+		9C9932D11BBB1ADD0005C2B0 /* YTPaymentSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPaymentSession.m; sourceTree = "<group>"; };
+		9C9932D31BBB1AE90005C2B0 /* YTPaymentResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPaymentResponseManager.h; sourceTree = "<group>"; };
+		9C9932D41BBB1AE90005C2B0 /* YTPaymentResponseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPaymentResponseManager.m; sourceTree = "<group>"; };
+		9C9932D91BBB6F040005C2B0 /* YTSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTSession.h; sourceTree = "<group>"; };
+		9C9932DA1BBB6F040005C2B0 /* YTSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTSession.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,12 +190,12 @@
 		9C36A4B11BB87FC800BE8948 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				9C5F25D91BBA3B0B00130979 /* Payment */,
-				9C5F25C51BBA06F800130979 /* Authorization */,
 				9C36A4B21BB8800700BE8948 /* YTNetworkingHelper.h */,
 				9C36A4B31BB8800700BE8948 /* YTNetworkingHelper.m */,
-				9C5F25B01BB9624300130979 /* YTResponseManager.h */,
-				9C5F25B11BB9624300130979 /* YTResponseManager.m */,
+				9C9932D91BBB6F040005C2B0 /* YTSession.h */,
+				9C9932DA1BBB6F040005C2B0 /* YTSession.m */,
+				9C5F25D91BBA3B0B00130979 /* Payment */,
+				9C5F25C51BBA06F800130979 /* Authorization */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -185,8 +203,7 @@
 		9C5F25C11BBA054800130979 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
-				9C5F25B31BB9666C00130979 /* YTTransferViewController.h */,
-				9C5F25B41BB9666C00130979 /* YTTransferViewController.m */,
+				9C9932CF1BBB14AC0005C2B0 /* Controller */,
 				9C5F25CA1BBA139300130979 /* View */,
 			);
 			name = Transfer;
@@ -195,8 +212,10 @@
 		9C5F25C51BBA06F800130979 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
-				9C36A4B51BB8E41B00BE8948 /* YTAuthRequestsManager.h */,
-				9C36A4B61BB8E41B00BE8948 /* YTAuthRequestsManager.m */,
+				9C36A4B51BB8E41B00BE8948 /* YTAuthRequestManager.h */,
+				9C36A4B61BB8E41B00BE8948 /* YTAuthRequestManager.m */,
+				9C5F25B01BB9624300130979 /* YTAuthResponseManager.h */,
+				9C5F25B11BB9624300130979 /* YTAuthResponseManager.m */,
 				9C36A4B81BB94AFA00BE8948 /* YTAuthSession.h */,
 				9C36A4B91BB94AFA00BE8948 /* YTAuthSession.m */,
 			);
@@ -206,6 +225,8 @@
 		9C5F25CA1BBA139300130979 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9C5F25E01BBAE9F300130979 /* YTScrollView.h */,
+				9C5F25E11BBAE9F300130979 /* YTScrollView.m */,
 				9C5F25B81BB9A9A000130979 /* YTTextField.h */,
 				9C5F25B91BB9A9A000130979 /* YTTextField.m */,
 				9C5F25BB1BB9F0BF00130979 /* YTTextFieldCurrency.h */,
@@ -218,8 +239,6 @@
 				9C5F25CD1BBA144D00130979 /* YTLabelInfo.m */,
 				9C5F25D31BBA340900130979 /* YTViewProtectionCode.h */,
 				9C5F25D41BBA340900130979 /* YTViewProtectionCode.m */,
-				9C5F25E01BBAE9F300130979 /* YTScrollView.h */,
-				9C5F25E11BBAE9F300130979 /* YTScrollView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -238,6 +257,8 @@
 			children = (
 				9C5F25D01BBA245800130979 /* KeychainWrapper.h */,
 				9C5F25D11BBA245800130979 /* KeychainWrapper.m */,
+				9C5F25E81BBAFE7300130979 /* HistoryDataManager.h */,
+				9C5F25E91BBAFE7300130979 /* HistoryDataManager.m */,
 			);
 			name = Persistence;
 			sourceTree = "<group>";
@@ -261,6 +282,8 @@
 		9C5F25D81BBA347000130979 /* Success */ = {
 			isa = PBXGroup;
 			children = (
+				9C5F25E51BBAF9AA00130979 /* YTTransferSuccessViewController.h */,
+				9C5F25E61BBAF9AA00130979 /* YTTransferSuccessViewController.m */,
 			);
 			name = Success;
 			sourceTree = "<group>";
@@ -268,10 +291,25 @@
 		9C5F25D91BBA3B0B00130979 /* Payment */ = {
 			isa = PBXGroup;
 			children = (
-				9C5F25DD1BBADD1A00130979 /* YTPaymentRequestsManager.h */,
-				9C5F25DE1BBADD1A00130979 /* YTPaymentRequestsManager.m */,
+				9C5F25DD1BBADD1A00130979 /* YTPaymentRequestManager.h */,
+				9C5F25DE1BBADD1A00130979 /* YTPaymentRequestManager.m */,
+				9C9932D31BBB1AE90005C2B0 /* YTPaymentResponseManager.h */,
+				9C9932D41BBB1AE90005C2B0 /* YTPaymentResponseManager.m */,
+				9C9932D01BBB1ADD0005C2B0 /* YTPaymentSession.h */,
+				9C9932D11BBB1ADD0005C2B0 /* YTPaymentSession.m */,
 			);
 			name = Payment;
+			sourceTree = "<group>";
+		};
+		9C9932CF1BBB14AC0005C2B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9C5F25B31BB9666C00130979 /* YTTransferViewController.h */,
+				9C5F25B41BB9666C00130979 /* YTTransferViewController.m */,
+				9C9932CC1BBB14A50005C2B0 /* YTScrollViewWrapper.h */,
+				9C9932CD1BBB14A50005C2B0 /* YTScrollViewWrapper.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,21 +414,27 @@
 			files = (
 				9C36A4B41BB8800700BE8948 /* YTNetworkingHelper.m in Sources */,
 				9C5F25D51BBA340900130979 /* YTViewProtectionCode.m in Sources */,
-				9C36A4B71BB8E41B00BE8948 /* YTAuthRequestsManager.m in Sources */,
+				9C36A4B71BB8E41B00BE8948 /* YTAuthRequestManager.m in Sources */,
 				9C5F25BA1BB9A9A000130979 /* YTTextField.m in Sources */,
 				9C5F25DC1BBAC6B500130979 /* YTTextView.m in Sources */,
-				9C5F25B21BB9624300130979 /* YTResponseManager.m in Sources */,
+				9C5F25B21BB9624300130979 /* YTAuthResponseManager.m in Sources */,
 				9C5F25CE1BBA144D00130979 /* YTLabelInfo.m in Sources */,
+				9C9932DB1BBB6F040005C2B0 /* YTSession.m in Sources */,
 				9C36A48B1BB80CED00BE8948 /* YTAppDelegate.m in Sources */,
 				9C5F25BD1BB9F0BF00130979 /* YTTextFieldCurrency.m in Sources */,
 				9C36A4BA1BB94AFA00BE8948 /* YTAuthSession.m in Sources */,
-				9C5F25DF1BBADD1A00130979 /* YTPaymentRequestsManager.m in Sources */,
+				9C9932CE1BBB14A50005C2B0 /* YTScrollViewWrapper.m in Sources */,
+				9C5F25DF1BBADD1A00130979 /* YTPaymentRequestManager.m in Sources */,
 				9C5F25C01BBA054000130979 /* YTUserInfo.m in Sources */,
 				9C5F25C91BBA0E7300130979 /* YTLabelHeader.m in Sources */,
 				9C36A4881BB80CED00BE8948 /* main.m in Sources */,
+				9C5F25EA1BBAFE7300130979 /* HistoryDataManager.m in Sources */,
 				9C5F25E21BBAE9F300130979 /* YTScrollView.m in Sources */,
+				9C9932D51BBB1AE90005C2B0 /* YTPaymentResponseManager.m in Sources */,
 				9C5F25D21BBA245800130979 /* KeychainWrapper.m in Sources */,
+				9C5F25E71BBAF9AA00130979 /* YTTransferSuccessViewController.m in Sources */,
 				9C5F25B51BB9666C00130979 /* YTTransferViewController.m in Sources */,
+				9C9932D21BBB1ADD0005C2B0 /* YTPaymentSession.m in Sources */,
 				9C36A4B01BB878BA00BE8948 /* YTLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

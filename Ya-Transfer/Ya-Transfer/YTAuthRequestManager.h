@@ -1,5 +1,5 @@
 //
-//  YTAuthRequestsManager.h
+//  YTAuthRequestManager.h
 //  Ya-Transfer
 //
 //  Created by Artem Lobanov on 28/09/15.
@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface YTAuthRequestsManager : NSObject
+@interface YTAuthRequestManager : NSObject
 
 - (NSURLRequest *)authorizationRequest;
 - (NSURLRequest *)tokenRequestWithCode:(NSString *)code;

@@ -10,6 +10,4 @@
 
 @interface YTTransferViewController : UIViewController
 
-- (void)handleProtectionCodeSwitchChange;
-
 @end

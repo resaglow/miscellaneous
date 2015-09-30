@@ -24,7 +24,7 @@
 //    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) { // TODO Change to Keychain
 //        viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 //    } else {
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferNavViewController"];
+        viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferSuccessViewController"];
 //    }
     
     self.window.rootViewController = viewController;

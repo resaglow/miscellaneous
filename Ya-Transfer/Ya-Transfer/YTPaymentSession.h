@@ -1,5 +1,5 @@
 //
-//  YTPaymentRequestsManager.h
+//  YTPaymentSession.h
 //  Ya-Transfer
 //
 //  Created by Artem Lobanov on 29/09/15.
@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YTPaymentRequestManager.h"
+#import "YTPaymentResponseManager.h"
+#import "YTSession.h"
 
-@interface YTPaymentRequestsManager : NSObject
+@interface YTPaymentSession : YTSession
 
 @end

@@ -10,36 +10,65 @@
 
 // Networkig helper methods & constants (seems not so bad in one class)
 
-// TODO Make constants
+// App specific method names for debug
+#ifdef DEBUG
+#define kGetTokenMethodName @"GetToken"
+#endif
 
-#define kBaseApiUrlString @"https://m.money.yandex.ru"
-#define kAuthorizePath @"/oauth/authorize"
-#define kTokenPath @"/oauth/token"
+extern NSString * const kTrue;
+extern NSString * const kFalse;
+extern NSString * const kError; // generic error constant
 
-#define kClientIdParamName @"client_id"
-#define kClientId @"25BC5D333B0358082B7F41BA6CA958A8BA6A263BBECCC698B6080A7779041F91"
+extern NSString * const kBaseUrlString;
+extern NSString * const kBaseApiUrlString;
 
-#define kHeaderContentType @"Content-Type"
-#define kHeaderContentTypeUrlEncoded @"application/x-www-form-urlencoded"
-#define kHeaderContentLength @"Content-Length"
+extern NSString * const kAuthorizePath;
+extern NSString * const kTokenPath;
 
-#define kAuthResponseTypeParamName @"response_type"
-#define kAuthResponseType @"code"
-#define kAuthRedirectUriParamName @"redirect_uri"
+extern NSString * const kClientIdParamName;
+extern NSString * const kClientId;
+
+// Authorization constants
+extern NSString * const kAuthResponseTypeParamName;
+extern NSString * const kAuthResponseType;
+extern NSString * const kAuthRedirectUriParamName;
 // Dummy website to redirect to
-#define kAuthRedirectUri @"http://pay.ru"
-#define kAuthScopeParamName @"scope"
-#define kAuthGrantTypeParamName @"grant_type"
-#define kAuthGrantType @"authorization_code"
-#define kAuthTokenParamName @"access_token"
+extern NSString * const kAuthRedirectUri;
+extern NSString * const kAuthScopeParamName;
+extern NSString * const kAuthGrantTypeParamName;
+extern NSString * const kAuthGrantType;
+extern NSString * const kAuthTokenParamName;
 
-#define kRequestErrorCode 1000
+// Payment constants
+extern NSString * const kPaymentPatternIdParamName;
+extern NSString * const kPaymentPatternId;
+extern NSString * const kPaymentToParamName;
+extern NSString * const kPaymentAmountParamName;
+extern NSString * const kPaymentCommentParamName;
+extern NSString * const kPaymentMessageParamName;
+extern NSString * const kPaymentCodeproParamName;
+extern NSString * const kPaymentExpirePeriodParamName;
+extern NSString * const kPaymentRequestIdParamName;
+extern NSString * const kPaymentProtectionCodeParamName;
+extern NSString * const kPaymentStatusParamName;
+extern NSString * const kPaymentStatusSuccess;
+
+extern NSString * const kHeaderContentType;
+extern NSString * const kHeaderContentTypeUrlEncoded;
+extern NSString * const kHeaderContentLength;
+
+extern NSInteger const kRequestErrorCode;
 
 // This one seems worth making a singleton
+// TODO: No it doesn't. Remove singleton
 
 @interface YTNetworkingHelper : UIViewController
 
-@property (readonly, nonatomic) NSURL *baseAPIURL;
+@property (readonly, nonatomic) NSURL *baseApiUrl;
+@property (readonly, nonatomic) NSArray *authRightsArray;
+
+- (NSString *)urlEncodedStringWithParams:(NSDictionary *)params;
+- (NSString *)percentEscapeUrl:(NSString *)string;
 
 // Not strictly for a method yet still reasonably clear
 - (NSError *)requestErrorForMethod:(NSString *)methodName statusCode:(NSUInteger)statusCode;

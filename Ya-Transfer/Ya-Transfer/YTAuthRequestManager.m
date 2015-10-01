@@ -20,10 +20,12 @@
     request.HTTPMethod = @"POST";
     [request addValue:kHeaderContentTypeUrlEncoded forHTTPHeaderField:kHeaderContentType];
     
+    NSString *rightsString = [[[YTNetworkingHelper sharedInstance].authRightsArray valueForKey:@"description"] componentsJoinedByString:@" "];
+    
     NSString *bodyString = [[YTNetworkingHelper sharedInstance] urlEncodedStringWithParams:@{kClientIdParamName: kClientId,
                                                                 kAuthResponseTypeParamName: kAuthResponseType,
                                                                  kAuthRedirectUriParamName: kAuthRedirectUri,
-                                                                       kAuthScopeParamName: [YTNetworkingHelper sharedInstance].authRightsArray}];
+                                                                       kAuthScopeParamName: rightsString}];
     
     request.HTTPBody = [bodyString dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:NO];
     

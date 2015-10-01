@@ -11,32 +11,25 @@
 
 @implementation YTPaymentRequestManager
 
-- (NSURLRequest *)requestPaymentRequestWithRecipientId:(NSInteger)recipientId
-                                                amount:(double)amount
-                                               comment:(NSString *)comment
-                                               codepro:(BOOL)codepro
-                                          expirePeriod:(NSInteger)expirePeriod
+- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTTransaction *)transaction
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kAuthorizePath
                                                                               relativeToURL:[YTNetworkingHelper sharedInstance].baseApiUrl]];
     request.HTTPMethod = @"POST";
     [request addValue:kHeaderContentTypeUrlEncoded forHTTPHeaderField:kHeaderContentType];
     
-    NSString *recipientIdString = [@(recipientId) stringValue];
-    NSString *amountString = [@(amount) stringValue];
-    NSString *codeProString = codepro ? kTrue : kFalse;
-    NSString *expirePeriodString = [@(expirePeriod) stringValue];
+    NSString *codeProString = transaction.prCodeEnabled ? kTrue : kFalse;
     
     NSMutableDictionary *paramDict =
     [NSMutableDictionary dictionaryWithDictionary:@{kPaymentPatternIdParamName: kPaymentPatternId,
-                                                           kPaymentToParamName: recipientIdString,
-                                                       kPaymentAmountParamName: amountString,
-                                                      kPaymentCommentParamName: comment,
+                                                           kPaymentToParamName: transaction.recipientId,
+                                                       kPaymentAmountParamName: transaction.amount,
+                                                      kPaymentCommentParamName: transaction.comment,
                                                       kPaymentMessageParamName: @"", // Not used here
                                                       kPaymentCodeproParamName: codeProString}];
     
-    if (codepro) {
-        [paramDict setObject:expirePeriodString forKey:kPaymentExpirePeriodParamName];
+    if (transaction.prCodeEnabled) {
+        [paramDict setObject:transaction.prCodeExpirePeriod forKey:kPaymentExpirePeriodParamName];
     }
     
     NSString *bodyString = [[YTNetworkingHelper sharedInstance] urlEncodedStringWithParams:paramDict];
@@ -46,17 +39,15 @@
     return request;
 }
 
-- (NSURLRequest *)processPaymentRequestWithRequestId:(NSInteger)requestId
+- (NSURLRequest *)processPaymentRequestWithRequestId:(NSString *)requestId
 {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kAuthorizePath
                                                                               relativeToURL:[YTNetworkingHelper sharedInstance].baseApiUrl]];
     request.HTTPMethod = @"POST";
     [request addValue:kHeaderContentTypeUrlEncoded forHTTPHeaderField:kHeaderContentType];
     
-    NSString *requestIdString = [@(requestId) stringValue];
-    
     NSMutableDictionary *paramDict =
-    [NSMutableDictionary dictionaryWithDictionary:@{kPaymentRequestIdParamName: requestIdString}];
+    [NSMutableDictionary dictionaryWithDictionary:@{kPaymentRequestIdParamName: requestId}];
     
     NSString *bodyString = [[YTNetworkingHelper sharedInstance] urlEncodedStringWithParams:paramDict];
     

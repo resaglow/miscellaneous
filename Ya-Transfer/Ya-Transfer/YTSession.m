@@ -23,24 +23,30 @@
     return self;
 }
 
-- (void)executeTaskWithRequest:(NSURLRequest *)tokenRequest completion:(void (^)(NSData *))handler
+- (void)executeTaskWithRequest:(NSURLRequest *)request completion:(void (^)(NSData *))handler
 {
-    [[self.urlSession dataTaskWithRequest:tokenRequest
+    if (!request) {
+#ifdef DEBUG
+        NSLog(@"Networking error, invalid request\n");
+        if (handler) handler(nil);
+#endif
+    }
+    [[self.urlSession dataTaskWithRequest:request
                             completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
                                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
                                 if (error) {
 #ifdef DEBUG
                                     NSLog(@"%@ networking error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
 #endif
-                                    handler(nil);
+                                    if (handler) handler(nil);
                                 } else {
                                     if (httpResponse.statusCode != 200) {
 #ifdef DEBUG
                                         NSLog(@"%@ request error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
 #endif
-                                        handler(nil);
+                                        if (handler) handler(nil);
                                     } else {
-                                        handler(data);
+                                        if (handler) handler(data);
                                     }
                                 }
                             }] resume];

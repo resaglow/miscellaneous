@@ -13,7 +13,7 @@
 
 @interface YTAuthSession : YTSession
 
-@property (nonatomic) YTAuthRequestManager *requestsManager;
+@property (nonatomic) YTAuthRequestManager *requestManager;
 @property (nonatomic) YTAuthResponseManager *responseManager;
 
 // This sends token request when correct redirect URL is passed

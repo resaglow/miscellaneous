@@ -16,6 +16,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -24,9 +28,9 @@
 //    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) { // TODO Change to Keychain
 //        viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
 //    } else {
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferSuccessViewController"];
+        viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferNavViewController"];
 //    }
-    
+
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     

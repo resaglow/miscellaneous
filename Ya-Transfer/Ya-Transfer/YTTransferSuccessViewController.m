@@ -10,7 +10,7 @@
 
 // TODO: Move out layout setup
 
-static NSString * const kSuccessLabelText = @"Success!";
+static NSString * const kNavItemTitle = @"Success!";
 
 @interface YTTransferSuccessViewController ()
 
@@ -28,13 +28,8 @@ static NSString * const kSuccessLabelText = @"Success!";
 {
     [super viewDidLoad];
     
-    self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
-    self.successLabel = [[UILabel alloc] init];
-    self.successLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.successLabel.text = kSuccessLabelText;
-    self.successLabel.textAlignment = NSTextAlignmentCenter;
-    [self.view addSubview:self.successLabel];
+    self.navigationItem.hidesBackButton = YES;
+    self.navigationItem.title = kNavItemTitle;
     
     self.okButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
     [self.okButton setImage:[[UIImage imageNamed:@"Ok"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
@@ -43,8 +38,7 @@ static NSString * const kSuccessLabelText = @"Success!";
     [self.view addSubview:self.okButton];
     
     NSDictionary *uiElements =
-    NSDictionaryOfVariableBindings(_successLabel,
-                                   _okButton//,
+    NSDictionaryOfVariableBindings(_okButton//,
 //                                   _protectionCodePromptLabel,
 //                                   _protectionCodeLabel,
 //                                   _furtherPromptLabel
@@ -77,22 +71,15 @@ static NSString * const kSuccessLabelText = @"Success!";
                                                           attribute:NSLayoutAttributeHeight
                                                          multiplier:0 constant:self.view.frame.size.width / 2]];
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_successLabel]-[_okButton]"
-                                                                      options:0 metrics:nil
-                                                                        views:uiElements]];
-    
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[_successLabel]-|"
-                                                                      options:0 metrics:nil
-                                                                        views:uiElements]];
-    
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_okButton]"
                                                                       options:0 metrics:nil
                                                                         views:uiElements]];
 }
 
+
 - (void)handleOk
 {
-    // TODO
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

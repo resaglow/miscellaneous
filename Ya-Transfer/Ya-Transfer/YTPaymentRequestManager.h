@@ -7,15 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "YTTransaction.h"
 
 @interface YTPaymentRequestManager : NSObject
 
-- (NSURLRequest *)requestPaymentRequestWithRecipientId:(NSInteger)recipientId
-                                                amount:(double)amount
-                                               comment:(NSString *)comment
-                                               codepro:(BOOL)codepro
-                                          expirePeriod:(NSInteger)expirePeriod;
-
-- (NSURLRequest *)processPaymentRequestWithRequestId:(NSInteger)requestId;
+- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTTransaction *)transaction;
+- (NSURLRequest *)processPaymentRequestWithRequestId:(NSString *)requestId;
 
 @end

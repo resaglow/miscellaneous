@@ -10,7 +10,7 @@
 
 @protocol YTAuthResponseManagerDelegate
 
-- (void)responseManagerDidHandleToken;
+- (void)authResponseManagerDidHandleToken;
 
 @end
 

@@ -7,25 +7,38 @@
 //
 
 #import "YTPaymentSession.h"
-#import "YTPaymentRequestManager.h"
-#import "YTPaymentResponseManager.h"
-
-@interface YTPaymentSession ()
-
-@property (nonatomic) NSURLSession *paymentUrlSession;
-
-@end
 
 @implementation YTPaymentSession
 
-- (void)handleSendPaymentWithRecipientId:(NSString *)recipientId
-                                  amount:(NSString *)amount
-                                 comment:(NSString *)comment
-                           prCodeEnabled:(BOOL)prCodeEnabled
-                      prCodeExpirePeriod:(NSString *)prCodeExpirePeriod
+- (instancetype)init
 {
-    // TODO Execute request && handleResp && execute process && handleResp && return control
+    self = [super init];
     
+    if (self) {
+        self.requestManager = [[YTPaymentRequestManager alloc] init];
+        self.responseManager = [[YTPaymentResponseManager alloc] init];
+    }
+    
+    return self;
+}
+
+
+- (void)sendPaymentWithTransaction:(YTTransaction *)transaction
+{    
+    NSURLRequest *requestPaymentRequest = [self.requestManager
+                                           requestPaymentRequestWithTransaction:(YTTransaction *)transaction];
+                
+    [self executeTaskWithRequest:requestPaymentRequest completion:^(NSData *data) {
+        [self.responseManager handleRequestPaymentResponse:data completion:^(NSString *requestId) {
+            NSURLRequest *processRequest;
+            
+            if (requestId) [self.requestManager processPaymentRequestWithRequestId:requestId];
+            
+            [self executeTaskWithRequest:processRequest completion:^(NSData *data) {
+                [self.responseManager handleProcessPaymentResponse:data completion:nil];
+            }];
+        }];
+    }];
 }
 
 @end

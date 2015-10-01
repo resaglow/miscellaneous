@@ -28,7 +28,6 @@ static const UInt8 kKeychainItemIdentifier[] = "com.resaglow.Ya-Transfer.KeyChai
 
 @end
 
-
 @implementation KeychainWrapper
 
 - (instancetype)init

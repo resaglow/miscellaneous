@@ -16,6 +16,7 @@
     
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
+        self.autocorrectionType = UITextAutocorrectionTypeNo;
     }
     
     return self;

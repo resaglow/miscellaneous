@@ -25,7 +25,7 @@
             // TODO Save to keychain && AES/3DES
             [[NSUserDefaults standardUserDefaults] setObject:authToken forKey:@"token"];
             
-            [self.delegate responseManagerDidHandleToken];
+            [self.delegate authResponseManagerDidHandleToken];
         } // Web interface seems to handle other cases, apparently no else needed
         
     }

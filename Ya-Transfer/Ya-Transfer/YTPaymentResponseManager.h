@@ -10,7 +10,8 @@
 
 @protocol YTPaymentResponseManagerDelegate
 
-- (void)processProtectionCode:(NSString *)protectionCode;
+- (void)paymentResponseManagerDidGetProtectionCode:(NSString *)protectionCode;
+- (void)paymentResponseManagerDidProcessPaymentResult:(BOOL)success;
 
 @end
 

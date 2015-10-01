@@ -11,15 +11,6 @@
 
 static NSString * const kPrompt = @"Validity period (days):";
 
-// MVC violation yet it seems redundant for this case to create an intermediate controller
-@interface YTViewProtectionCode () <UITextFieldDelegate>
-
-@property (nonatomic) UILabel *promptLabel;
-@property (nonatomic) UILabel *validityPeriodLabel;
-@property (nonatomic) UIStepper *validityPeriodStepper;
-
-@end
-
 @implementation YTViewProtectionCode
 
 - (instancetype)init
@@ -36,7 +27,7 @@ static NSString * const kPrompt = @"Validity period (days):";
         self.validityPeriodLabel = [[UILabel alloc] init];
         self.validityPeriodLabel.translatesAutoresizingMaskIntoConstraints = NO;
         self.validityPeriodLabel.text = @"1";
-        self.validityPeriodLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize] weight:0.4f];
+        self.validityPeriodLabel.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
         [self addSubview:self.validityPeriodLabel];
         
         self.validityPeriodStepper = [[UIStepper alloc] init];

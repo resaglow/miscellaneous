@@ -16,7 +16,7 @@
     self = [super init];
     
     if (self) {
-        self.requestsManager = [[YTAuthRequestManager alloc] init];
+        self.requestManager = [[YTAuthRequestManager alloc] init];
         self.responseManager = [[YTAuthResponseManager alloc] init];
     }
     
@@ -36,7 +36,8 @@
 // Returns a value meaning whether a calling controller should load a URL or not (redirect case)
 - (BOOL)handleUrlLoad:(NSURL *)url
 {
-    if (![self isUrl:url.baseURL equivalentToUrl:[NSURL URLWithString:kAuthRedirectUri]]) {
+    NSURL *baseUrl = [[NSURL URLWithString:@"/" relativeToURL:url] absoluteURL];
+    if (![self isUrl:baseUrl equivalentToUrl:[NSURL URLWithString:kAuthRedirectUri]]) {
         return YES;
     }
     
@@ -54,7 +55,7 @@
     if (!code) {
         return YES;
     } else {
-        NSURLRequest *tokenRequest = [self.requestsManager tokenRequestWithCode:code];
+        NSURLRequest *tokenRequest = [self.requestManager tokenRequestWithCode:code];
         [self executeTaskWithRequest:tokenRequest completion:^(NSData *data) {
             [self.responseManager handleTokenResponse:data];
         }];

@@ -29,7 +29,7 @@
         <!--View Controller-->
         <scene sceneID="gNB-Uw-HFd">
             <objects>
-                <viewController storyboardIdentifier="HistoryViewController" id="hNY-cA-oMF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingsViewController" id="hNY-cA-oMF" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9Al-bX-u22"/>
                         <viewControllerLayoutGuide type="bottom" id="Qs2-9D-NCV"/>
@@ -37,16 +37,11 @@
                     <view key="view" contentMode="scaleToFill" id="QQE-nF-OE9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQp-wd-kfW">
-                                <rect key="frame" x="16" y="100" width="49" height="30"/>
-                                <state key="normal" title="History">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="vVQ-lb-74t" kind="show" identifier="History" id="Vzl-xn-rnx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gki-QN-lWr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,8 +78,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="CvZ-Uc-r50"/>
                     <connections>
-                        <segue destination="hNY-cA-oMF" kind="show" identifier="History" id="kVN-Aa-VeH"/>
-                        <segue destination="KRq-Gt-oNn" kind="show" identifier="TranferSuccess" id="sze-cm-DUO"/>
+                        <segue destination="hNY-cA-oMF" kind="show" identifier="Settings" id="kVN-Aa-VeH"/>
+                        <segue destination="KRq-Gt-oNn" kind="show" identifier="TransferSuccess" id="sze-cm-DUO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8o-UY-z8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,6 +103,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sDc-hz-RD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1966" y="368"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4qh-sR-dzm">
+            <objects>
+                <viewController id="vVQ-lb-74t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VNV-sx-YAd"/>
+                        <viewControllerLayoutGuide type="bottom" id="cWC-ev-ZZj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LhW-k5-hxj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZHr-oX-hGm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1966" y="1116"/>
         </scene>
     </scenes>
 </document>

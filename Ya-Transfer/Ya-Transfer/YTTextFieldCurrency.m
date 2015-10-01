@@ -11,11 +11,14 @@
 NSString * const kRubles         = @"rub";
 NSString * const kRublesToAppend = @" rub";
 NSString * const kPlaceholder    = @"0 rub";
+double     const kCommission     = 0.05;
 
 // MVC violation yet it seems redundant for this case to create an intermediate controller
 @interface YTTextFieldCurrency () <UITextFieldDelegate>
 
 @property (nonatomic) NSNumberFormatter *numberFormatter;
+// Another formatter to clarify number of "cents"
+@property (nonatomic) NSNumberFormatter *dependingFieldFormatter;
 
 @end
 
@@ -28,6 +31,14 @@ NSString * const kPlaceholder    = @"0 rub";
     if (self) {
         self.numberFormatter = [[NSNumberFormatter alloc] init];
         self.numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.numberFormatter.minimumFractionDigits = 0;
+        self.numberFormatter.maximumFractionDigits = 2;
+        
+        self.dependingFieldFormatter = [[NSNumberFormatter alloc] init];
+        self.dependingFieldFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+        self.dependingFieldFormatter.minimumFractionDigits = 2;
+        self.dependingFieldFormatter.maximumFractionDigits = 2;
+        
         self.numberFormatter.decimalSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleGroupingSeparator];
         self.numberFormatter.decimalSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
         
@@ -39,7 +50,18 @@ NSString * const kPlaceholder    = @"0 rub";
     return self;
 }
 
-#pragma mark - Currency delegate method
+- (instancetype)initWithDependingTextField:(YTTextField *)dependingTextField
+{
+    self = [self init];
+    
+    if (self) {
+        self.dependingTextField = dependingTextField;
+    }
+    
+    return self;
+}
+
+#pragma mark - UITextFieldDelegate
 // Somewhat ugly but somewhat working currency formatting handlers
 
 // In this case it seems better not to split this function up into several another functions
@@ -75,10 +97,10 @@ NSString * const kPlaceholder    = @"0 rub";
     // Erasing
     if (string.length == 0) {
         if (textField.text.length == kRublesToAppend.length + 1) { // A space and a digit
-            textField.text = @"";
+            [self updateYTTextField:self withText:@""];
         } else {
             unformattedNumberString = [unformattedNumberString substringToIndex:[unformattedNumberString length] - 1];
-            textField.text = [self formatCurrency:unformattedNumberString];
+            [self updateYTTextField:self withText:unformattedNumberString];
         }
         
         position = [textField positionFromPosition:[textField beginningOfDocument]
@@ -117,10 +139,10 @@ NSString * const kPlaceholder    = @"0 rub";
     
     if ([string stringByTrimmingCharactersInSet:characterSet].length > 0) {
         if ([textField.text isEqualToString:@""]) {
-            textField.text = [string stringByAppendingString:kRublesToAppend];
+            [self updateYTTextField:self withText:string];
         } else {
             unformattedNumberString = [unformattedNumberString stringByAppendingString:string];
-            textField.text = [self formatCurrency:unformattedNumberString];
+            [self updateYTTextField:self withText:unformattedNumberString];
         }
     } else {
         return NO;
@@ -134,8 +156,29 @@ NSString * const kPlaceholder    = @"0 rub";
 
 #pragma mark - Helpers
 
+- (void)updateYTTextField:(YTTextFieldCurrency *)textField withText:(NSString *)text
+{
+    if (text.length != 0) {
+        textField.text = [self formatCurrency:text];
+        
+        NSNumber *numberText = [self.numberFormatter numberFromString:text];
+        if (numberText) {
+            // Different from formatCurrency:... to preserve delimeter while using that function
+            self.dependingTextField.text =
+            [[self.dependingFieldFormatter stringFromNumber:
+             [NSNumber numberWithDouble:numberText.doubleValue - numberText.doubleValue * kCommission]]
+             stringByAppendingString:kRublesToAppend];
+        } else {
+            self.dependingTextField.text = @"";
+        }
+    } else {
+        textField.text = @"";
+        textField.dependingTextField.text = @"";
+    }
+}
+
 - (NSString *)formatCurrency:(NSString *)unformattedNumberString {
-    NSString *numberString = [self.numberFormatter stringFromNumber: [self.numberFormatter numberFromString:unformattedNumberString]];
+    NSString *numberString = [self.numberFormatter stringFromNumber:[self.numberFormatter numberFromString:unformattedNumberString]];
     
     if ([[unformattedNumberString substringFromIndex:[unformattedNumberString length] - 1] isEqualToString:self.numberFormatter.decimalSeparator]) {
         return [[numberString stringByAppendingString:self.numberFormatter.decimalSeparator] stringByAppendingString:kRublesToAppend];

@@ -12,12 +12,13 @@
 
 - (instancetype)initWithActiveView:(UITextView *)activeTextView
 {
-    self = [super init];
+    self = [self init];
     
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.editable = YES;
         self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+        self.autocorrectionType = UITextAutocorrectionTypeNo;
     }
     
     return self;

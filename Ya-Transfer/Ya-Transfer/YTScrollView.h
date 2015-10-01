@@ -36,9 +36,7 @@
 @property (nonatomic) YTLabelHeader *protectionCodeLabel;
 @property (nonatomic) YTViewProtectionCode *protectionCodeView;
 
-@property (nonatomic) UIView *boxView;
-@property (nonatomic) UILabel *bottomLabel;
-
+@property (nonatomic) YTLabelHeader *commentLabel;
 @property (nonatomic) YTTextView *commentTextView;
 
 @end

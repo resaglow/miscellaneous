@@ -15,10 +15,11 @@
     self = [self init];
     
     if (self) {
+        self.scrollView = [[YTScrollView alloc] initWithController:viewController];
         [self.scrollView.protectionCodeSwitch addTarget:self
                                                  action:@selector(handleProtectionCodeSwitchChange)
                                        forControlEvents:UIControlEventValueChanged];
-        self.scrollView = [[YTScrollView alloc] initWithController:viewController];
+        [self handleProtectionCodeSwitchChange];
         [self registerForKeyboardNotifications];
     }
     
@@ -32,9 +33,11 @@
     if (self.scrollView.protectionCodeSwitch.on) {
         self.scrollView.protectionCodeView.userInteractionEnabled = YES;
         self.scrollView.protectionCodeView.alpha = 1.0f;
+        self.scrollView.protectionCodeView.validityPeriodStepper.enabled = YES;
     } else {
         self.scrollView.protectionCodeView.userInteractionEnabled = NO;
         self.scrollView.protectionCodeView.alpha = 0.3f;
+        self.scrollView.protectionCodeView.validityPeriodStepper.enabled = NO;
     }
 }
 
@@ -55,7 +58,7 @@
     NSDictionary *userInfo = [notification userInfo];
     CGRect keyboardInfoFrame = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(64, 0.0, keyboardInfoFrame.size.height, 0.0);
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, keyboardInfoFrame.size.height, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     
@@ -71,9 +74,15 @@
 // Called when the UIKeyboardWillHideNotification is received
 - (void)keyboardWillBeHidden:(NSNotification *)notification
 {
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(64, 0.0, 0, 0.0);
-    self.scrollView.contentInset = contentInsets;
-    self.scrollView.scrollIndicatorInsets = contentInsets;
+    [UIView animateWithDuration:0.3
+                          delay:0
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, 0, 0.0);
+                         self.scrollView.contentInset = contentInsets;
+                         self.scrollView.scrollIndicatorInsets = contentInsets;
+                     }
+                     completion:NULL];
 }
 
 @end

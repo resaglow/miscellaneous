@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YTViewProtectionCode : UIView
+// MVC violation yet it seems redundant for this case to create an intermediate controller
+@interface YTViewProtectionCode : UIView <UITextFieldDelegate>
+
+@property (nonatomic) UILabel *promptLabel;
+@property (nonatomic) UILabel *validityPeriodLabel;
+@property (nonatomic) UIStepper *validityPeriodStepper;
 
 @end

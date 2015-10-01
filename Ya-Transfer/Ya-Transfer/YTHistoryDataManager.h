@@ -1,5 +1,5 @@
 //
-//  HistoryDataManager.h
+//  YTHistoryDataManager.h
 //  Ya-Transfer
 //
 //  Created by Artem Lobanov on 29/09/15.
@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HistoryDataManager : NSObject
+@interface YTHistoryDataManager : NSObject
+
+//- (NSArray *)updateHistory;
 
 @end

@@ -16,7 +16,7 @@
     
     if (self) {
         self.textColor = [UIColor orangeColor];
-        self.font = [UIFont systemFontOfSize:[UIFont systemFontSize] weight:0.3f];
+        self.font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     }
     
     return self;

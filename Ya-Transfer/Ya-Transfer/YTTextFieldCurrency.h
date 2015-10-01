@@ -10,4 +10,8 @@
 
 @interface YTTextFieldCurrency : YTTextField
 
+@property (nonatomic) YTTextField *dependingTextField;
+
+- (instancetype)initWithDependingTextField:(YTTextField *)dependingTextField;
+
 @end

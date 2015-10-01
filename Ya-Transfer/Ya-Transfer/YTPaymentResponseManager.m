@@ -8,7 +8,6 @@
 
 #import "YTPaymentResponseManager.h"
 #import "YTNetworkingHelper.h"
-//#import "YTPay
 
 @implementation YTPaymentResponseManager
 
@@ -16,6 +15,11 @@
 
 - (void)handleRequestPaymentResponse:(NSData *)data completion:(void (^)(NSString *))handler
 {
+    if (!data) {
+        if (handler) handler(nil);
+        return;
+    }
+    
     NSError *parsingError = nil;
     id responseDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parsingError];
     if (parsingError) {
@@ -25,7 +29,7 @@
     } else {
         id protectionCode = responseDict[kPaymentProtectionCodeParamName];
         if (protectionCode) {
-            [self.delegate processProtectionCode:protectionCode];
+            [self.delegate paymentResponseManagerDidGetProtectionCode:protectionCode];
         }
         
         id requestId = responseDict[kPaymentRequestIdParamName];
@@ -35,12 +39,18 @@
 #endif
         }
         
-        handler(requestId);
+        if (handler) handler(requestId);
     }
 }
 
 - (void)handleProcessPaymentResponse:(NSData *)data completion:(void (^)(BOOL))handler
 {
+    if (!data) {
+        [self.delegate paymentResponseManagerDidProcessPaymentResult:NO]; // sending to the controller
+        if (handler) handler(NO);
+        return;
+    }
+    
     NSError *parsingError = nil;
     id responseDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&parsingError];
     if (parsingError) {
@@ -55,8 +65,12 @@
             NSLog(@"ProcessPayment error: %@\n", error);
 #endif
         }
-
-        handler([status isEqualToString:kPaymentStatusSuccess]);
+        
+        BOOL success = [status isEqualToString:kPaymentStatusSuccess];
+        
+        [self.delegate paymentResponseManagerDidProcessPaymentResult:success]; // sending to the controller
+        
+        if (handler) handler(success); // sending to the session to continue networking (if needed)
     }
 }
 

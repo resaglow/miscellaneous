@@ -10,13 +10,13 @@
 #import "YTPaymentRequestManager.h"
 #import "YTPaymentResponseManager.h"
 #import "YTSession.h"
-#import "YTTransaction.h"
+#import "YTOperation.h"
 
 @interface YTPaymentSession : YTSession
 
 @property (nonatomic) YTPaymentRequestManager *requestManager;
 @property (nonatomic) YTPaymentResponseManager *responseManager;
 
-- (void)sendPaymentWithTransaction:(YTTransaction *)transaction;
+- (void)sendPaymentWithTransaction:(YTOperation *)transaction;
 
 @end

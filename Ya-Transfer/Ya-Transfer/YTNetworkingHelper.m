@@ -12,32 +12,34 @@
 
 NSString * const kTrue = @"true";
 NSString * const kFalse = @"false";
-NSString * const kError = @"error";
+NSString * const kError = @"error"; // generic error constant
 
 NSString * const kBaseUrlString = @"https://m.money.yandex.ru";
+NSString * const kBaseApiUrlString = @"https://money.yandex.ru/api";
 
 NSString * const kAuthorizePath = @"/oauth/authorize";
 NSString * const kTokenPath = @"/oauth/token";
+NSString * const kRequstPaymentPath = @"/request-payment";
+NSString * const kProcessPaymentPath = @"/process-payment";
+NSString * const kHistoryPath = @"/operation-history";
 
 NSString * const kClientIdParamName = @"client_id";
 NSString * const kClientId = @"25BC5D333B0358082B7F41BA6CA958A8BA6A263BBECCC698B6080A7779041F91";
 
+// Authorization constants
 NSString * const kAuthResponseTypeParamName = @"response_type";
 NSString * const kAuthResponseType = @"code";
 NSString * const kAuthRedirectUriParamName = @"redirect_uri";
-NSString * const kAuthRedirectUri = @"http://pay.ru"; // Dummy website to redirect to & intercept
+NSString * const kAuthRedirectUri = @"http://pay.ru"; // dummy website to redirect to & intercept
 NSString * const kAuthScopeParamName = @"scope";
 NSString * const kAuthGrantTypeParamName = @"grant_type";
 NSString * const kAuthGrantType = @"authorization_code";
 NSString * const kAuthTokenParamName = @"access_token";
 
-NSString * const kBaseApiUrlString = @"https://money.yandex.ru/api";
-
-NSString * const kRequstPaymentPath = @"/request-payment";
-NSString * const kProcessPaymentPath = @"/process-payment";
-
+// Payment constants
+NSString * const kPaymentOperationIdParamName = @"operation_id";
 NSString * const kPaymentPatternIdParamName = @"pattern_id";
-NSString * const kPaymentPatternId = @"p2p";
+NSString * const kPaymentPatternIdP2P = @"p2p";
 NSString * const kPaymentToParamName = @"to";
 NSString * const kPaymentAmountParamName = @"amount";
 NSString * const kPaymentCommentParamName = @"comment";
@@ -48,6 +50,14 @@ NSString * const kPaymentRequestIdParamName = @"request_id";
 NSString * const kPaymentProtectionCodeParamName = @"protection_code";
 NSString * const kPaymentStatusParamName = @"status";
 NSString * const kPaymentStatusSuccess = @"success";
+NSString * const kPaymentDateTimeParamName = @"datetime";
+NSString * const kHistoryOperations = @"operations";
+NSString * const kPaymentPaymentParamName = @"payment";
+
+// History constants
+NSString * const kOperationTypeParamName = @"type";
+NSString * const kHistoryStartRecordParamName = @"start_record";
+NSString * const kHistoryRecordsParamName = @"records";
 
 NSString * const kHeaderContentType = @"Content-Type";
 NSString * const kHeaderContentTypeUrlEncoded = @"application/x-www-form-urlencoded";

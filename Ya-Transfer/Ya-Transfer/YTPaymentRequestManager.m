@@ -11,9 +11,9 @@
 
 @implementation YTPaymentRequestManager
 
-- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTTransaction *)transaction
+- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTOperation *)transaction
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kAuthorizePath
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kRequstPaymentPath
                                                                               relativeToURL:[YTNetworkingHelper sharedInstance].baseApiUrl]];
     request.HTTPMethod = @"POST";
     [request addValue:kHeaderContentTypeUrlEncoded forHTTPHeaderField:kHeaderContentType];
@@ -21,7 +21,7 @@
     NSString *codeProString = transaction.prCodeEnabled ? kTrue : kFalse;
     
     NSMutableDictionary *paramDict =
-    [NSMutableDictionary dictionaryWithDictionary:@{kPaymentPatternIdParamName: kPaymentPatternId,
+    [NSMutableDictionary dictionaryWithDictionary:@{kPaymentPatternIdParamName: kPaymentPatternIdP2P,
                                                            kPaymentToParamName: transaction.recipientId,
                                                        kPaymentAmountParamName: transaction.amount,
                                                       kPaymentCommentParamName: transaction.comment,
@@ -41,7 +41,7 @@
 
 - (NSURLRequest *)processPaymentRequestWithRequestId:(NSString *)requestId
 {
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kAuthorizePath
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:kProcessPaymentPath
                                                                               relativeToURL:[YTNetworkingHelper sharedInstance].baseApiUrl]];
     request.HTTPMethod = @"POST";
     [request addValue:kHeaderContentTypeUrlEncoded forHTTPHeaderField:kHeaderContentType];

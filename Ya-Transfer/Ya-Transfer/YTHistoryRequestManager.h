@@ -10,4 +10,8 @@
 
 @interface YTHistoryRequestManager : NSObject
 
+- (NSURLRequest *)historyRequestWithType:(NSString *)type
+                             startRecord:(NSString *)startRecord
+                            recordsCount:(NSString *)recordsCount;
+
 @end

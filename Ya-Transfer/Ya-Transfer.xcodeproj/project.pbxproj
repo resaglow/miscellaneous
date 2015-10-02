@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		23456D4153A46BA27238F53B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BF31661B43C958EF37F54B /* libPods.a */; };
-		9C0408151BBC70BE00CABBEB /* YTTransaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0408141BBC70BE00CABBEB /* YTTransaction.m */; };
+		9C0408151BBC70BE00CABBEB /* YTOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0408141BBC70BE00CABBEB /* YTOperation.m */; };
 		9C04081A1BBC95F200CABBEB /* YTHistoryRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0408191BBC95F200CABBEB /* YTHistoryRequestManager.m */; };
 		9C04081D1BBC960800CABBEB /* YTHistoryResponseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04081C1BBC960800CABBEB /* YTHistoryResponseManager.m */; };
 		9C0408201BBC961600CABBEB /* YTHistorySession.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C04081F1BBC961600CABBEB /* YTHistorySession.m */; };
@@ -54,8 +54,8 @@
 
 /* Begin PBXFileReference section */
 		3917E18CE23F160218D77CC5 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9C0408131BBC70BE00CABBEB /* YTTransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTTransaction.h; sourceTree = "<group>"; };
-		9C0408141BBC70BE00CABBEB /* YTTransaction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTTransaction.m; sourceTree = "<group>"; };
+		9C0408131BBC70BE00CABBEB /* YTOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTOperation.h; sourceTree = "<group>"; };
+		9C0408141BBC70BE00CABBEB /* YTOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTOperation.m; sourceTree = "<group>"; };
 		9C0408181BBC95F200CABBEB /* YTHistoryRequestManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTHistoryRequestManager.h; sourceTree = "<group>"; };
 		9C0408191BBC95F200CABBEB /* YTHistoryRequestManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTHistoryRequestManager.m; sourceTree = "<group>"; };
 		9C04081B1BBC960800CABBEB /* YTHistoryResponseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTHistoryResponseManager.h; sourceTree = "<group>"; };
@@ -325,8 +325,8 @@
 			children = (
 				9C5F25BE1BBA054000130979 /* YTUserInfo.h */,
 				9C5F25BF1BBA054000130979 /* YTUserInfo.m */,
-				9C0408131BBC70BE00CABBEB /* YTTransaction.h */,
-				9C0408141BBC70BE00CABBEB /* YTTransaction.m */,
+				9C0408131BBC70BE00CABBEB /* YTOperation.h */,
+				9C0408141BBC70BE00CABBEB /* YTOperation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -503,7 +503,7 @@
 				9C5F25D51BBA340900130979 /* YTViewProtectionCode.m in Sources */,
 				9C36A4B71BB8E41B00BE8948 /* YTAuthRequestManager.m in Sources */,
 				9C04081D1BBC960800CABBEB /* YTHistoryResponseManager.m in Sources */,
-				9C0408151BBC70BE00CABBEB /* YTTransaction.m in Sources */,
+				9C0408151BBC70BE00CABBEB /* YTOperation.m in Sources */,
 				9C5F25BA1BB9A9A000130979 /* YTTextField.m in Sources */,
 				9C5F25DC1BBAC6B500130979 /* YTTextView.m in Sources */,
 				9C5F25B21BB9624300130979 /* YTAuthResponseManager.m in Sources */,

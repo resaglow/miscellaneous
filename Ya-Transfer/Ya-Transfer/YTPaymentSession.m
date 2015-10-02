@@ -23,10 +23,10 @@
 }
 
 
-- (void)sendPaymentWithTransaction:(YTTransaction *)transaction
+- (void)sendPaymentWithTransaction:(YTOperation *)transaction
 {    
     NSURLRequest *requestPaymentRequest = [self.requestManager
-                                           requestPaymentRequestWithTransaction:(YTTransaction *)transaction];
+                                           requestPaymentRequestWithTransaction:(YTOperation *)transaction];
                 
     [self executeTaskWithRequest:requestPaymentRequest completion:^(NSData *data) {
         [self.responseManager handleRequestPaymentResponse:data completion:^(NSString *requestId) {

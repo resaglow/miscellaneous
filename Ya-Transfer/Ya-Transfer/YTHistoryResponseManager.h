@@ -10,12 +10,14 @@
 
 @protocol YTHistoryResponseManagerDelegate
 
-
+// TODO
 
 @end
 
 @interface YTHistoryResponseManager : NSObject
 
 @property (nonatomic) id<YTHistoryResponseManagerDelegate> delegate;
+
+- (void)handleHistoryFetch:(NSData *)data completion:(void (^)(NSArray *))handler;
 
 @end

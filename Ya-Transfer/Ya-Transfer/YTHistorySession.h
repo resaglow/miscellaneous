@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "YTHistoryRequestManager.h"
 #import "YTHistoryResponseManager.h"
+#import "YTSession.h"
 
-@interface YTHistorySession : NSObject
+@interface YTHistorySession : YTSession
 
 @property (nonatomic) YTHistoryRequestManager *requestManager;
 @property (nonatomic) YTHistoryResponseManager *responseManager;

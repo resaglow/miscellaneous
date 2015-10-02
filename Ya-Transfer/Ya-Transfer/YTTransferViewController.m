@@ -9,7 +9,7 @@
 #import "YTTransferViewController.h"
 #import "YTScrollViewWrapper.h"
 #import "YTPaymentSession.h"
-#import "YTTransaction.h"
+#import "YTOperation.h"
 
 static NSString * const kNavItemTitle = @"Transfer";
 
@@ -73,11 +73,12 @@ static NSString * const kNavItemTitle = @"Transfer";
     
     // TODO Client side validation
     
-    YTTransaction *newTransaction = [[YTTransaction alloc] initWithRecipientId:recipientId
-                                                                        amount:amount
-                                                                       comment:comment
-                                                                 prCodeEnabled:prCodeEnabled
-                                                            prCodeExpirePeriod:prCodeExpirePeriod];
+    YTOperation *newTransaction = [[YTOperation alloc] initWithOperationId:@""
+                                                               recipientId:recipientId
+                                                                    amount:amount
+                                                                   comment:comment
+                                                             prCodeEnabled:prCodeEnabled
+                                                        prCodeExpirePeriod:prCodeExpirePeriod direction:@"" dateTime:@""];
     
     [self.paymentSession sendPaymentWithTransaction:newTransaction];
 }

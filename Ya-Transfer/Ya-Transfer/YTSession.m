@@ -36,13 +36,13 @@
                                 NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
                                 if (error) {
 #ifdef DEBUG
-                                    NSLog(@"%@ networking error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
+                                    NSLog(@"Networking error, status code %ld\n", (long)httpResponse.statusCode);
 #endif
                                     if (handler) handler(nil);
                                 } else {
                                     if (httpResponse.statusCode != 200) {
 #ifdef DEBUG
-                                        NSLog(@"%@ request error, status code %ld\n", kGetTokenMethodName, (long)httpResponse.statusCode);
+                                        NSLog(@"Request error, status code %ld\n", (long)httpResponse.statusCode);
 #endif
                                         if (handler) handler(nil);
                                     } else {

@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "YTTransaction.h"
+#import "YTOperation.h"
 
 @interface YTPaymentRequestManager : NSObject
 
-- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTTransaction *)transaction;
+- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTOperation *)transaction;
 - (NSURLRequest *)processPaymentRequestWithRequestId:(NSString *)requestId;
 
 @end

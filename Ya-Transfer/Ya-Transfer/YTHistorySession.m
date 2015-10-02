@@ -7,6 +7,9 @@
 //
 
 #import "YTHistorySession.h"
+#import "YTNetworkingHelper.h"
+
+static NSString * const kRecordsCountString = @"100";
 
 @implementation YTHistorySession
 
@@ -24,7 +27,11 @@
 
 - (void)fetchAllHistory
 {
-    
+    NSArray *history = @[];
+    NSURLRequest *request = [self.requestManager historyRequestWithType:kPaymentPaymentParamName
+                                                            startRecord:0
+                                                           recordsCount:kRecordsCountString];
+    // TODO MAIN STUCK
 }
 
 - (void)fetchLastTransactions:(NSInteger)transactionsCount

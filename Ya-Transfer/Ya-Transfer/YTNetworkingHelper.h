@@ -10,11 +10,6 @@
 
 // Networkig helper methods & constants (seems not so bad in one class)
 
-// App specific method names for debug
-#ifdef DEBUG
-#define kGetTokenMethodName @"GetToken"
-#endif
-
 extern NSString * const kTrue;
 extern NSString * const kFalse;
 extern NSString * const kError; // generic error constant
@@ -24,6 +19,9 @@ extern NSString * const kBaseApiUrlString;
 
 extern NSString * const kAuthorizePath;
 extern NSString * const kTokenPath;
+extern NSString * const kRequstPaymentPath;
+extern NSString * const kProcessPaymentPath;
+extern NSString * const kHistoryPath;
 
 extern NSString * const kClientIdParamName;
 extern NSString * const kClientId;
@@ -32,16 +30,16 @@ extern NSString * const kClientId;
 extern NSString * const kAuthResponseTypeParamName;
 extern NSString * const kAuthResponseType;
 extern NSString * const kAuthRedirectUriParamName;
-// Dummy website to redirect to
-extern NSString * const kAuthRedirectUri;
+extern NSString * const kAuthRedirectUri; // dummy website to redirect to
 extern NSString * const kAuthScopeParamName;
 extern NSString * const kAuthGrantTypeParamName;
 extern NSString * const kAuthGrantType;
 extern NSString * const kAuthTokenParamName;
 
 // Payment constants
+extern NSString * const kPaymentOperationIdParamName;
 extern NSString * const kPaymentPatternIdParamName;
-extern NSString * const kPaymentPatternId;
+extern NSString * const kPaymentPatternIdP2P;
 extern NSString * const kPaymentToParamName;
 extern NSString * const kPaymentAmountParamName;
 extern NSString * const kPaymentCommentParamName;
@@ -52,6 +50,14 @@ extern NSString * const kPaymentRequestIdParamName;
 extern NSString * const kPaymentProtectionCodeParamName;
 extern NSString * const kPaymentStatusParamName;
 extern NSString * const kPaymentStatusSuccess;
+extern NSString * const kPaymentDateTimeParamName;
+extern NSString * const kOperationTypeParamName;
+extern NSString * const kPaymentPaymentParamName;
+
+// History constants
+extern NSString * const kHistoryStartRecordParamName;
+extern NSString * const kHistoryRecordsParamName;
+extern NSString * const kHistoryOperations;
 
 extern NSString * const kHeaderContentType;
 extern NSString * const kHeaderContentTypeUrlEncoded;

@@ -26,6 +26,7 @@
 #ifdef DEBUG
         NSLog(@"RequestPayment parsing error: %@\n", parsingError);
 #endif
+        if (handler) handler(nil);
     } else {
         id protectionCode = responseDict[kPaymentProtectionCodeParamName];
         if (protectionCode) {
@@ -57,6 +58,7 @@
 #ifdef DEBUG
         NSLog(@"ProcessPayment parsing error: %@\n", parsingError);
 #endif
+        if (handler) handler(nil);
     } else {
         id status = responseDict[kPaymentStatusParamName];
         id error = responseDict[kError];

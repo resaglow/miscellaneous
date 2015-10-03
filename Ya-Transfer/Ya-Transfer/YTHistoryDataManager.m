@@ -7,27 +7,8 @@
 //
 
 #import "YTHistoryDataManager.h"
-#import "YTHistorySession.h"
-
-@interface YTHistoryDataManager () <YTHistoryResponseManagerDelegate>
-
-@property (nonatomic) YTHistorySession *historySession;
-
-@end
 
 @implementation YTHistoryDataManager
-
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (self) {
-        self.historySession = [[YTHistorySession alloc] init];
-        self.historySession.responseManager.delegate = self;
-    }
-    
-    return self;
-}
 
 //- (NSArray *)updateHistory
 //{

@@ -65,20 +65,19 @@ static NSString * const kNavItemTitle = @"Transfer";
 {
     YTScrollView *scrollView = self.scrollViewWrapper.scrollView;
     
-    NSString *recipientId = scrollView.recipientTextField.text;
-    NSString *amount = scrollView.toPayTextField.text;
+    NSUInteger recipientId = [scrollView.recipientTextField.text integerValue];
+    NSInteger amount = [scrollView.toPayTextField.text integerValue];
     BOOL prCodeEnabled = scrollView.protectionCodeSwitch.on;
     NSString *prCodeExpirePeriod = scrollView.protectionCodeView.validityPeriodLabel.text;
     NSString *comment = scrollView.commentTextView.text;
     
     // TODO Client side validation
     
-    YTOperation *newTransaction = [[YTOperation alloc] initWithOperationId:@""
-                                                               recipientId:recipientId
+    YTOperation *newTransaction = [[YTOperation alloc] initWithRecipientId:recipientId
                                                                     amount:amount
                                                                    comment:comment
                                                              prCodeEnabled:prCodeEnabled
-                                                        prCodeExpirePeriod:prCodeExpirePeriod direction:@"" dateTime:@""];
+                                                        prCodeExpirePeriod:prCodeExpirePeriod];
     
     [self.paymentSession sendPaymentWithTransaction:newTransaction];
 }

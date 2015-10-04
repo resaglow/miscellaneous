@@ -10,22 +10,16 @@
 
 @interface YTOperation : NSObject
 
-@property (nonatomic) NSString *operationId;
-@property (nonatomic) NSString *recipientId; // May be not a number
-@property (nonatomic) NSString *amount; // Not to have even more conversions
-@property (nonatomic) NSString *comment;
-@property (nonatomic) BOOL      prCodeEnabled;
-@property (nonatomic) NSString *prCodeExpirePeriod;
-@property (nonatomic) NSString *direction;
-@property (nonatomic) NSString *dateTime;
+@property (nonatomic) NSUInteger recipientId; // May be not a number
+@property (nonatomic) double     amount; // Not to have even more conversions
+@property (nonatomic) NSString  *comment;
+@property (nonatomic) BOOL       prCodeEnabled;
+@property (nonatomic) NSString  *prCodeExpirePeriod;
 
-- (instancetype)initWithOperationId:(NSString *)operationId
-                        recipientId:(NSString *)recipientId
-                             amount:(NSString *)amount
+- (instancetype)initWithRecipientId:(NSUInteger)recipientId
+                             amount:(double)amount
                             comment:(NSString *)comment
                       prCodeEnabled:(BOOL)prCodeEnabled
-                 prCodeExpirePeriod:(NSString *)prCodeExpirePeriod
-                          direction:(NSString *)direction
-                           dateTime:(NSString *)dateTime;
+                 prCodeExpirePeriod:(NSString *)prCodeExpirePeriod;
 
 @end

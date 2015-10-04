@@ -20,10 +20,13 @@
     
     NSString *codeProString = transaction.prCodeEnabled ? kTrue : kFalse;
     
+    NSString *amount = [NSString stringWithFormat:@"%.2f", transaction.amount];
+    NSString *recipientId = [NSString stringWithFormat:@"%lu", (unsigned long)transaction.recipientId];
+    
     NSMutableDictionary *paramDict =
     [NSMutableDictionary dictionaryWithDictionary:@{kPaymentPatternIdParamName: kPaymentPatternIdP2P,
-                                                           kPaymentToParamName: transaction.recipientId,
-                                                       kPaymentAmountParamName: transaction.amount,
+                                                           kPaymentToParamName: recipientId,
+                                                       kPaymentAmountParamName: amount,
                                                       kPaymentCommentParamName: transaction.comment,
                                                       kPaymentMessageParamName: @"", // Not used here
                                                       kPaymentCodeproParamName: codeProString}];

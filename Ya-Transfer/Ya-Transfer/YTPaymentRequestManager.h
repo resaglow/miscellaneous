@@ -11,7 +11,7 @@
 
 @interface YTPaymentRequestManager : NSObject
 
-- (NSURLRequest *)requestPaymentRequestWithTransaction:(YTOperation *)transaction;
+- (NSURLRequest *)requestPaymentRequestWithOperation:(YTOperation *)operation;
 - (NSURLRequest *)processPaymentRequestWithRequestId:(NSString *)requestId;
 
 @end

@@ -83,6 +83,10 @@ NSInteger const kRequestErrorCode = 1000;
     return [NSURL URLWithString:kBaseUrlString];
 }
 
+- (NSURL *)baseApiApiUrl {
+    return [NSURL URLWithString:kBaseApiUrlString];
+}
+
 - (NSArray *)authRightsArray {
     return @[@"account-info", @"operation-history", @"operation-details", @"payment-p2p"];
 }

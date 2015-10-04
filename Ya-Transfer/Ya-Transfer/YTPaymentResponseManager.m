@@ -11,8 +11,6 @@
 
 @implementation YTPaymentResponseManager
 
-// NSString block parameters for now to simplify
-
 - (void)handleRequestPaymentResponse:(NSData *)data completion:(void (^)(NSString *))handler
 {
     if (!data) {

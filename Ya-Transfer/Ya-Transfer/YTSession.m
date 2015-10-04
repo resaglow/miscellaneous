@@ -39,15 +39,18 @@
                                     NSLog(@"Networking error, status code %ld\n", (long)httpResponse.statusCode);
 #endif
                                     if (handler) handler(nil);
-                                } else {
-                                    if (httpResponse.statusCode != 200) {
+                                } else if (httpResponse.statusCode != 200) {
 #ifdef DEBUG
                                         NSLog(@"Request error, status code %ld\n", (long)httpResponse.statusCode);
 #endif
                                         if (handler) handler(nil);
-                                    } else {
+                                } else {
+                                        NSString *contentType = httpResponse.allHeaderFields[@"Content-Type"];
+                                        NSLog(@"%@\n", contentType);
+//                                        NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//                                        NSLog(@"%@\n", responseString);
+
                                         if (handler) handler(data);
-                                    }
                                 }
                             }] resume];
 }

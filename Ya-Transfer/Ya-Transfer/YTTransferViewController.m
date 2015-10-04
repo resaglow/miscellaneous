@@ -32,6 +32,7 @@ static NSString * const kNavItemTitle = @"Transfer";
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.navigationItem.title = kNavItemTitle;
+//    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
     self.view.backgroundColor = [UIColor colorWithWhite:.85f alpha:1.0f];
     [self setupScrollView];
@@ -40,11 +41,11 @@ static NSString * const kNavItemTitle = @"Transfer";
     [[UIBarButtonItem alloc] initWithTitle:@"Send"
                                      style:UIBarButtonItemStylePlain target:self action:@selector(handleSend)];
     self.navigationItem.rightBarButtonItem.tintColor = [UIColor blackColor];
-
-    // TODO DEBUG
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
-                                             initWithBarButtonSystemItem:UIBarButtonSystemItemReply
-                                             target:self action:@selector(debugSuccessSegue)];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] init];
+    self.navigationItem.leftBarButtonItem.title = @"More";
+    self.navigationItem.leftBarButtonItem.target = self;
+    self.navigationItem.leftBarButtonItem.action = @selector(handleMoreTap);
     
     self.paymentSession = [[YTPaymentSession alloc] init];
     self.paymentSession.responseManager.delegate = self;
@@ -57,10 +58,9 @@ static NSString * const kNavItemTitle = @"Transfer";
     self.scrollViewWrapper = [[YTScrollViewWrapper alloc] initWithController:self];
 }
 
-// TODO DEBUG
-- (void)debugSuccessSegue
+- (void)handleMoreTap
 {
-    [self performSegueWithIdentifier:@"TransferSuccess" sender:nil];
+    [self performSegueWithIdentifier:@"More" sender:nil];
 }
 
 #pragma mark - Send button handler
@@ -69,7 +69,7 @@ static NSString * const kNavItemTitle = @"Transfer";
 {
     YTScrollView *scrollView = self.scrollViewWrapper.scrollView;
     
-    NSUInteger recipientId = [scrollView.recipientTextField.text integerValue];
+    NSString *recipientId = scrollView.recipientTextField.text;
     NSInteger amount = [scrollView.toPayTextField.text integerValue];
     BOOL prCodeEnabled = scrollView.protectionCodeSwitch.on;
     NSString *prCodeExpirePeriod = scrollView.protectionCodeView.validityPeriodLabel.text;
@@ -99,7 +99,7 @@ static NSString * const kNavItemTitle = @"Transfer";
     if (success) {
         [self performSegueWithIdentifier:@"LoginSuccess" sender:nil]; // No need to pass a sender
     } else {
-        NSLog(@"NOOOOOOOOO\n"); // TODO!
+        NSLog(@"Payment error\n");
     }
 }
 

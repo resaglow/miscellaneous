@@ -71,6 +71,7 @@ extern NSInteger const kRequestErrorCode;
 @interface YTNetworkingHelper : UIViewController
 
 @property (readonly, nonatomic) NSURL *baseApiUrl;
+@property (readonly, nonatomic) NSURL *baseApiApiUrl;
 @property (readonly, nonatomic) NSArray *authRightsArray;
 
 - (NSString *)urlEncodedStringWithParams:(NSDictionary *)params;

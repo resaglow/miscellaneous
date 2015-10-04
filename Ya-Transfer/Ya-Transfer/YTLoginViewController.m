@@ -9,8 +9,7 @@
 #import "YTLoginViewController.h"
 #import "YTTransferViewController.h"
 
-static NSString * const kLoginTitle = @"Login";
-static NSInteger const kBarHeight = 64; // 20 for top bar + 44 for navbar
+static NSString * const kNavItemTitle = @"Login";
 
 @interface YTLoginViewController () <UIWebViewDelegate, YTAuthResponseManagerDelegate>
 
@@ -25,6 +24,8 @@ static NSInteger const kBarHeight = 64; // 20 for top bar + 44 for navbar
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     self.authSession = [[YTAuthSession alloc] init];
     self.authSession.responseManager.delegate = self;
@@ -32,27 +33,25 @@ static NSInteger const kBarHeight = 64; // 20 for top bar + 44 for navbar
     [self setupLayout];
     
     self.webView.delegate = self;
-    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
     [self loadAuthorization];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    for(NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] deleteCookie:cookie];
+    }
 }
 
 - (void)setupLayout
 {
-    UINavigationBar *navbar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, kBarHeight)];
-    navbar.backgroundColor = [UIColor brownColor];
+    self.navigationItem.title = kNavItemTitle;
     
-    UINavigationItem *navItem = [[UINavigationItem alloc] init];
-    navItem.title = kLoginTitle;
-    navItem.rightBarButtonItem = [[UIBarButtonItem alloc]
-                                  initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
-                                  target:self action:@selector(loadAuthorization)];
-    navItem.rightBarButtonItem.tintColor = [UIColor blackColor];
-    navbar.items = @[navItem];
-    
-    [self.view addSubview:navbar];
-    self.navBar = navbar;
-    
-    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, kBarHeight, self.view.frame.size.width, self.view.frame.size.height - kBarHeight)];
+    self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     [self.view addSubview:self.webView];
 }
 
@@ -67,7 +66,8 @@ static NSInteger const kBarHeight = 64; // 20 for top bar + 44 for navbar
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
  navigationType:(UIWebViewNavigationType)navigationType
 {
-    return [self.authSession handleUrlLoad:request.URL];
+    BOOL should = [self.authSession handleUrlLoad:request.URL];
+    return should;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
@@ -77,14 +77,16 @@ static NSInteger const kBarHeight = 64; // 20 for top bar + 44 for navbar
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
-    self.navigationItem.title = kLoginTitle;
+    self.navigationItem.title = kNavItemTitle;
 }
 
 #pragma YTAuthResponseManagerDelegate
 
 - (void)authResponseManagerDidHandleToken
 {
-    [self performSegueWithIdentifier:@"LoginSuccess" sender:nil]; // No need to pass a sender
+    dispatch_sync(dispatch_get_main_queue(), ^{
+       [self performSegueWithIdentifier:@"LoginSuccess" sender:nil]; // No need to pass a sender
+    });
 }
 
 @end

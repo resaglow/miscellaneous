@@ -26,7 +26,7 @@
 - (void)sendPaymentWithTransaction:(YTOperation *)transaction
 {    
     NSURLRequest *requestPaymentRequest = [self.requestManager
-                                           requestPaymentRequestWithTransaction:(YTOperation *)transaction];
+                                           requestPaymentRequestWithOperation:(YTOperation *)transaction];
                 
     [self executeTaskWithRequest:requestPaymentRequest completion:^(NSData *data) {
         [self.responseManager handleRequestPaymentResponse:data completion:^(NSString *requestId) {

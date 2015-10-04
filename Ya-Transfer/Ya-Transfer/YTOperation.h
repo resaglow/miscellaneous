@@ -10,13 +10,13 @@
 
 @interface YTOperation : NSObject
 
-@property (nonatomic) NSUInteger recipientId; // May be not a number
+@property (nonatomic) NSString  *recipientId; // May be not a number
 @property (nonatomic) double     amount; // Not to have even more conversions
 @property (nonatomic) NSString  *comment;
 @property (nonatomic) BOOL       prCodeEnabled;
 @property (nonatomic) NSString  *prCodeExpirePeriod;
 
-- (instancetype)initWithRecipientId:(NSUInteger)recipientId
+- (instancetype)initWithRecipientId:(NSString *)recipientId
                              amount:(double)amount
                             comment:(NSString *)comment
                       prCodeEnabled:(BOOL)prCodeEnabled

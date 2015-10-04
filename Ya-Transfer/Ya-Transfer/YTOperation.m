@@ -10,7 +10,7 @@
 
 @implementation YTOperation
 
-- (instancetype)initWithRecipientId:(NSUInteger)recipientId
+- (instancetype)initWithRecipientId:(NSString *)recipientId
                              amount:(double)amount
                             comment:(NSString *)comment
                       prCodeEnabled:(BOOL)prCodeEnabled

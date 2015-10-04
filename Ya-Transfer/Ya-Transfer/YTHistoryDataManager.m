@@ -31,7 +31,7 @@
         
         [self.database executeUpdate: @"create table if not exists Operation("
                                        "id integer primary key autoincrement,"
-                                       "recipientId integer,"
+                                       "recipientId text,"
                                        "amount real,"
                                        "comment text);"];
     }
@@ -53,7 +53,7 @@
 {
     for (YTOperation *operation in operations) {
         [self.database executeUpdate:@"insert into Operation (recipientId, amount, comment) values (?, ?, ?)",
-         [NSNumber numberWithUnsignedInteger:operation.recipientId], [NSNumber numberWithDouble:operation.amount], operation.comment];
+         operation.recipientId, [NSNumber numberWithDouble:operation.amount], operation.comment];
     }
 }
 
@@ -65,7 +65,7 @@
     while (results.next) {
         YTOperation *newOperation = [[YTOperation alloc] init];
         
-        newOperation.recipientId = [results intForColumn:@"recipientId"];
+        newOperation.recipientId = [results stringForColumn:@"recipientId"];
         newOperation.amount      = [results intForColumn:@"amount"];
         newOperation.comment     = [results stringForColumn:@"comment"];
         

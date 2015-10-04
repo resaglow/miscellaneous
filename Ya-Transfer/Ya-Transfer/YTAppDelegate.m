@@ -8,6 +8,7 @@
 
 #import "YTAppDelegate.h"
 #import "YTHistoryDataManager.h"
+#import "YTTransferViewController.h"
 
 @interface YTAppDelegate ()
 
@@ -19,22 +20,22 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
     [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor blackColor]];
     
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    UIViewController *viewController = nil;
-//    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) { // TODO Change to Keychain
-//        viewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//    } else {
-        viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferNavViewController"];
-//    }
+    UINavigationController *navController =
+    [[UINavigationController alloc] initWithRootViewController:
+     [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"]];
     
-//    YTHistoryDataManager *historyDataManager = [YTHistoryDataManager 
-    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"token"]) { // TODO Change to Keychain
+        YTTransferViewController *transferVC = [storyboard instantiateViewControllerWithIdentifier:@"TransferViewController"];
+        [navController pushViewController:transferVC animated:NO];
+    }
 
-    self.window.rootViewController = viewController;
+    self.window.rootViewController = navController;
     [self.window makeKeyAndVisible];
     
     return YES;

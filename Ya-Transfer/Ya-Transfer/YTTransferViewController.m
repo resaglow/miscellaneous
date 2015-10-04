@@ -10,6 +10,7 @@
 #import "YTScrollViewWrapper.h"
 #import "YTPaymentSession.h"
 #import "YTOperation.h"
+#import "YTHistoryDataManager.h"
 
 static NSString * const kNavItemTitle = @"Transfer";
 
@@ -19,6 +20,7 @@ static NSString * const kNavItemTitle = @"Transfer";
 
 @property (nonatomic) YTScrollViewWrapper *scrollViewWrapper;
 @property (nonatomic) YTPaymentSession *paymentSession;
+@property (nonatomic) YTHistoryDataManager *historyDataManager;
 @property (nonatomic) NSString *protectionCode;
 
 @end
@@ -46,6 +48,8 @@ static NSString * const kNavItemTitle = @"Transfer";
     
     self.paymentSession = [[YTPaymentSession alloc] init];
     self.paymentSession.responseManager.delegate = self;
+    
+    self.historyDataManager = [YTHistoryDataManager sharedInstance];
 }
 
 - (void)setupScrollView
@@ -73,13 +77,15 @@ static NSString * const kNavItemTitle = @"Transfer";
     
     // TODO Client side validation
     
-    YTOperation *newTransaction = [[YTOperation alloc] initWithRecipientId:recipientId
-                                                                    amount:amount
-                                                                   comment:comment
-                                                             prCodeEnabled:prCodeEnabled
-                                                        prCodeExpirePeriod:prCodeExpirePeriod];
+    YTOperation *newOperation = [[YTOperation alloc] initWithRecipientId:recipientId
+                                                                  amount:amount
+                                                                 comment:comment
+                                                           prCodeEnabled:prCodeEnabled
+                                                      prCodeExpirePeriod:prCodeExpirePeriod];
     
-    [self.paymentSession sendPaymentWithTransaction:newTransaction];
+    [self.historyDataManager updateHistory:@[newOperation]];
+    
+    [self.paymentSession sendPaymentWithTransaction:newOperation];
 }
 
 
@@ -93,7 +99,7 @@ static NSString * const kNavItemTitle = @"Transfer";
     if (success) {
         [self performSegueWithIdentifier:@"LoginSuccess" sender:nil]; // No need to pass a sender
     } else {
-        NSLog(@"NOOOOOOOOO\n"); // TODO
+        NSLog(@"NOOOOOOOOO\n"); // TODO!
     }
 }
 

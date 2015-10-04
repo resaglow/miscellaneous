@@ -29,13 +29,11 @@
         self.database = [FMDatabase databaseWithPath:path];
         [self.database open];
         
-        [self.database executeUpdate: @"create table Operation("
+        [self.database executeUpdate: @"create table if not exists Operation("
                                        "id integer primary key autoincrement,"
                                        "recipientId integer,"
                                        "amount real,"
-                                       "comment text"
-                                       "prCodeEnabled boolean"
-                                       "prCodeExpirationDate integer)"];
+                                       "comment text);"];
     }
     
     return self;
@@ -54,8 +52,8 @@
 - (void)updateHistory:(NSArray *)operations
 {
     for (YTOperation *operation in operations) {
-        [self.database executeUpdate:@"insert into Operation values '%ud', %f, '%@'", // TODO! which identifier for unsigned long?
-         operation.recipientId, operation.amount, operation.comment];
+        [self.database executeUpdate:@"insert into Operation (recipientId, amount, comment) values (?, ?, ?)",
+         [NSNumber numberWithUnsignedInteger:operation.recipientId], [NSNumber numberWithDouble:operation.amount], operation.comment];
     }
 }
 

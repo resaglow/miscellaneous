@@ -10,6 +10,9 @@
 
 @interface YTHistoryDataManager : NSObject
 
-//- (NSArray *)updateHistory;
+- (void)updateHistory:(NSArray *)operations;
+- (NSArray *)getHistory;
+
++ (instancetype)sharedInstance;
 
 @end

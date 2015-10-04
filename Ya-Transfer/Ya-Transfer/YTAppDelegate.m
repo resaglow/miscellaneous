@@ -7,6 +7,7 @@
 //
 
 #import "YTAppDelegate.h"
+#import "YTHistoryDataManager.h"
 
 @interface YTAppDelegate ()
 
@@ -19,7 +20,6 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
     [[UINavigationBar appearance] setBackgroundColor:[UIColor whiteColor]];
     
-    
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -30,6 +30,9 @@
 //    } else {
         viewController = [storyboard instantiateViewControllerWithIdentifier:@"TransferNavViewController"];
 //    }
+    
+//    YTHistoryDataManager *historyDataManager = [YTHistoryDataManager 
+    
 
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
